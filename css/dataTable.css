@@ -607,11 +607,10 @@ td i {
     /* Ajusta el ancho según tus necesidades */
     padding-right: 42px;
     /* Espacio para el icono y el espacio */
-    background-image: url("/archivos/imagenes/Search-icon.png");
+    background-image: url("../archivos/imagenes/Search-icon.png");
     /* Ruta a tu icono de búsqueda */
     background-repeat: no-repeat;
     background-position: right 10px center;
-    
     /* Espacio después del icono */
     background-size: 20px 20px;
     /* Ajusta el tamaño del icono */
