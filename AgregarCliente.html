@@ -18,6 +18,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -102,29 +103,29 @@
             <div class="contForms">
                 <div class="input1">
                     <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del cliente</p>
-                    <input class="input-field" type="text" placeholder="212" readonly>
+                    <input id="" class="input-field" type="text" placeholder="212" readonly>
                 </div>
                 <br>
                 <div class="input1">
                     <p><i class="fa-solid fa-font iconosRojos"></i> Nombre del cliente</p>
-                    <input class="input-field" type="text" placeholder="Ingrese el nombre">
+                    <input id="nombre_cliente" class="input-field" type="text" placeholder="Ingrese el nombre">
                 </div>
                 <br>
                 <div class="input1">
                     <p><i class="fa-solid fa-phone iconosRojos"></i> Telefono del cliente</p>
-                    <input class="input-field" type="text" placeholder="Ingrese el telefono">
+                    <input id="telefono_cliente" class="input-field" type="text" placeholder="Ingrese el telefono">
                 </div>
                 <br>
                 <div class="input1">
                     <p><i class="fa-sharp fa-solid fa-location-dot iconosRojos"></i> Dirección del cliente</p>
-                    <input class="input-field" type="text" placeholder="Ingrese la dirección">
+                    <input id="direccion_cliente" class="input-field" type="text" placeholder="Ingrese la dirección">
                 </div>
                 <br>
             </div>
 
             <center>
                 <div class="cajaBotones">
-                    <button id="guardar" type="submit">Guardar</button>
+                    <button onclick="registrarCliente()" id="guardar" type="submit">Guardar</button>
                     <div class="espacioEntreBotones"></div>
                     <button id="cancelar" type="button" onclick="window.location.href='CLientes.html'">Cancelar</button>
                 </div>
@@ -132,7 +133,6 @@
 
         </div>
     </div>
-
 
     <script src="js/gestionDeClientes.js"></script>
     <script src="js/Menu.js"></script>
