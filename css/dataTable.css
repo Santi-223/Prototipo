@@ -603,14 +603,15 @@ td i {
 
 /* Estilo para la barra de búsqueda */
 .dataTables_wrapper .dataTables_filter input {
-    width: 420px;
+    width: 450px;
     /* Ajusta el ancho según tus necesidades */
     padding-right: 42px;
     /* Espacio para el icono y el espacio */
-    background-image: url("../archivos/imagenes/Search-icon.png");
+    background-image: url("/archivos/imagenes/Search-icon.png");
     /* Ruta a tu icono de búsqueda */
     background-repeat: no-repeat;
     background-position: right 10px center;
+    
     /* Espacio después del icono */
     background-size: 20px 20px;
     /* Ajusta el tamaño del icono */
@@ -663,7 +664,7 @@ td i {
 
 .botones {
     position: absolute;
-    z-index: 9999;
+    z-index: 200;
     margin-left: 87vh;
     display: flex;
     margin-top: 40px;

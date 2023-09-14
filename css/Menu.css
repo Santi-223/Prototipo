@@ -130,7 +130,6 @@
   align-items: center;
   text-decoration: none;
   color: #333;
-  cursor: pointer;
 }
 
 .usuario-link img {
@@ -158,5 +157,12 @@
 }
 
 .contenido {
+  margin-top: 20px;
   background-color: white;
+}
+
+.yellow-underline {
+  color: #FAC710;
+  text-decoration: underline;
+  cursor: pointer;
 }

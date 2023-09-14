@@ -47,7 +47,7 @@
               <!-- Flecha hacia abajo --></p>
             <ul class="options">
               <li onclick="window.location.href='gestionroles.html'">Roles</li>
-              
+              <li onclick="window.location.href='gestionPermisos.html'">Permisos</li>
             </ul>
           </div>
           <div class="module">
@@ -106,27 +106,31 @@
 
 
     ㅤ
-<div id="contenedorcito">
-    <div class="input-container">
-        <div id="kaka">
-            
-            <p id="skad"><span class="icon key-icon iconosRojos"></span>ID del Rol</p>
-            <input class="input-field" type="text" placeholder="ID de Rol" style="max-width: 500px;">
-        </div>
-        <br>
-        <br>
-        <br>
-        <div id="kake">
-            
-            <p id="skady"><span class="fa-solid fa-font iconosRojos"></span> Nombre del Rol</p>
-            <input class="input-field2" type="text" placeholder="Nombre de rol">
-        </div>
-
-
+    <div id="contenedorcito">
+      <div class="input-container">
+          <div id="kaka">
+              <p id="skad"> <span class="icon key-icon iconosRojos"></span>ID</p>
+         
+          <input class="input-field" type="text" placeholder="001">
+          </div>
+          
       </div>
+    
+      <div class="input-container">
+          <div id="eo">
+              <p id="textito"> <span class="fa-solid fa-font iconosRojos"></span> Nombre</p>
+         
+          <input class="input-field" type="text" placeholder="Insertar nombre">
+          </div>
+          
+      </div>
+    
+    
+     
+    
+     
+    </div>
 
-
-</div>
 
 <div id="contenedorcito">
     <div class="input-container">
@@ -149,6 +153,9 @@
 
 
 
+
+
+
 <div class="contDerechaAbajo">
     <div id="seleccionarpermisos">
       <div id="tabla-contenedor">
@@ -162,25 +169,25 @@
             <tr>
               <td>
                 <input type="checkbox" class="checkbox">
-                Compras
+                Permiso 1
               </td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="checkbox">
-                Ventas
+                Permiso 2
               </td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="checkbox">
-                Configuracion
+                Permiso 3
               </td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="checkbox">
-                Orden de producción
+                Permiso 4
               </td>
             </tr>
 
@@ -196,13 +203,11 @@
 
 
 
-
-
   <center>
     <div class="cajaBotones">
-      <button id="guardar" type="submit">Guardar</button>
+      <button id="cancelar" type="submit">Guardar</button>
       <div class="espacioEntreBotones"></div>
-      <button id="cancelar" type="button" onclick="window.location.href='gestionroles.html'">Cancelar</button>
+      <button id="guardar" type="button" onclick="window.location.href='gestionroles.html'">Cancelar</button>
     </div>
   </center>
 
@@ -220,21 +225,9 @@ $(document).ready(function () {
 });
 </script>
 <script src="js/Menu.js"></script>
-<script src="js/gestionDeRoles.js"></script>
+<script src="js/gestionJuanda.js"></script>
 <script type="text/javascript" src="js/dataTable.js"></script>
 
 <link rel="stylesheet" href="gestionderoles.html">
-
-
-
-
-
-
-    
-
-
-
-
-
 
 

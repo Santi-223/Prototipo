@@ -182,3 +182,21 @@ $(".iClienteFrecuente").click(function () {
     $(this).toggleClass("fa-user-plus fa-user-minus");
     $(this).toggleClass("gris");
 });
+
+function seleccionarFila(checkbox) {
+    var fila = checkbox.parentNode.parentNode;
+    if (checkbox.checked) {
+        fila.classList.add('selected');
+    } else {
+        fila.classList.remove('selected');
+    }
+
+    // Deseleccionar otras filas
+    var checkboxes = document.getElementsByName('seleccion');
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+            cb.parentNode.parentNode.classList.remove('selected');
+        }
+    });
+}

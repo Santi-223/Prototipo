@@ -46,7 +46,7 @@
                   <!-- Flecha hacia abajo --></p>
                 <ul class="options">
                   <li onclick="window.location.href='gestionroles.html'">Roles</li>
-                  
+                  <li onclick="window.location.href='gestionPermisos.html'">Permisos</li>
                 </ul>
               </div>
               <div class="module">
@@ -284,20 +284,6 @@
                         <td>Calle 13</td>
                         <td>323079</td>
                      </tr>
-                     <tr id="TSDatos">
-                        <td>4</td>
-                        <td><img src="archivos/imagenes/imagen sin imagen.png" width="40"></td>
-                        <td>MariaVerde</td>
-                        <td>Calle 50</td>
-                        <td>323078</td>
-                        </tr>
-                        <tr id="TSDatos">
-                            <td>5</td>
-                            <td><img src="archivos/imagenes/imagen sin imagen.png" width="40"></td>
-                            <td>LeidyLegumbre</td>
-                            <td>carrera 90</td>
-                            <td>451023</td>
-                            </tr>
                    </tbody>
                  </table>
                  
@@ -325,7 +311,7 @@
                              <td>Los ramones</td>
                              <td>calle 13</td>
                              <td>323019</td>
-                             <td><input type="checkbox" class="checkbox"></td>
+                             <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                          </tr>
                          <tr>
                             <td>4</td>
@@ -333,7 +319,7 @@
                             <td>Arley</td>
                             <td>cll 1212-3</td>
                             <td>323231</td>
-                            <td><input type="checkbox" class="checkbox"></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -341,7 +327,7 @@
                             <td>Maria</td>
                             <td>calle 50</td>
                             <td>322345</td>
-                            <td><input type="checkbox" class="checkbox"></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                         </tr>
                         <tr>
                             <td>6</td>
@@ -349,7 +335,7 @@
                             <td>Leidy</td>
                             <td>calle 70</td>
                             <td>312456</td>
-                            <td><input type="checkbox" class="checkbox"></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                         </tr>
                         <tr>
                             <td>7</td>
@@ -357,7 +343,7 @@
                             <td>Juan</td>
                             <td>crr 90</td>
                             <td>14523547</td>
-                            <td><input type="checkbox" class="checkbox"></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                         </tr>
                          <!-- Agregar más filas aquí -->
                      </table>
@@ -376,9 +362,9 @@
 
      <center>
       <div class="cajaBotones">
-      <button id="guardar" type="submit" onclick="window.location.href='gestionCompras.html'">Registrar</button>
+      <button id="cancelar" type="submit" onclick="window.location.href='gestionCompras.html'">Registrar</button>
       <div class="espacioEntreBotones"></div>
-      <button id="cancelar" type="button" onclick="window.location.href='gestionCompras.html'">Cancelar</button>
+      <button id="guardar" type="button" onclick="window.location.href='gestionCompras.html'">Cancelar</button>
      </div>
      </center>
      </div>

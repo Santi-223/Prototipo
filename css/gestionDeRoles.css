@@ -75,3 +75,16 @@ input{
 }
 
 
+
+
+.botonx {
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #E12424;
+    color: white;
+    margin-left: 100px;
+}
+

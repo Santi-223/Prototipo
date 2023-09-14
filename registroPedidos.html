@@ -46,7 +46,7 @@
                   <!-- Flecha hacia abajo --></p>
                 <ul class="options">
                   <li onclick="window.location.href='gestionroles.html'">Roles</li>
-                  
+                  <li onclick="window.location.href='gestionPermisos.html'">Permisos</li>
                 </ul>
               </div>
               <div class="module">
@@ -168,30 +168,18 @@
                    </thead>
                    <tbody>
                      <tr id="TSDatos">
-                       <td>9001</td>
-                       <td>Arroz</td>
-                       <td>Este proucto...</td>
-                       <td>Granos</td>
-                       <td>100.000</td>
-                     </tr>
-                     <tr id="TSDatos">
-                       <td>9002</td>
-                       <td>Pollo</td>
-                       <td>Este producto...</td>
-                       <td>Carnes</td>
-                       <td>35.000</td>
-                       </tr>
-                       <tr id="TSDatos">
-                        <td>9003</td>
-                        <td>Coca-Cola</td>
+                        <td>9008</td>
+                        <td>Agua</td>
                         <td>Este producto...</td>
-                        <td>Bebidas</td>
-                        <td>20.000</td>
-                        </tr>
+                        <td>Bebidas </td>
+                        <td>15.000</td>
+
+                     </tr>
                    </tbody>
                  </table>
                  
                 </div>
+                
                 
                  </div>
                  <div id="BtnAgregarIn">
@@ -215,7 +203,7 @@
                             <td>Este producto...</td>
                             <td>Bebidas</td>
                             <td>20.000</td>
-                             <td><input type="checkbox" class="checkbox"></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                          </tr>
                          <tr>
                             <td>9005</td>
@@ -223,7 +211,7 @@
                             <td>Este producto...</td>
                             <td>Bebidas</td>
                             <td>20.000</td>
-                             <td><input type="checkbox"></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                          </tr>
                          <tr>
                             <td>9006</td>
@@ -231,7 +219,7 @@
                             <td>Este producto...</td>
                             <td>Carnes</td>
                             <td>42.000</td>
-                           <td><input type="checkbox"></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                        </tr>
                        <tr>
                         <td>9007</td>
@@ -239,7 +227,7 @@
                         <td>Este producto...</td>
                         <td>Carnes</td>
                         <td>200.000</td>
-                         <td><input type="checkbox"></td>
+                        <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                      </tr>
                      <tr>
                         <td>9008</td>
@@ -248,7 +236,7 @@
                         <td>Bebidas
                         </td>
                         <td>15.000</td>
-                       <td><input type="checkbox"></td>
+                        <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                      </tr>
                          <!-- Agregar más filas aquí -->
                      </table>
@@ -279,32 +267,13 @@
                      </tr>
                    </thead>
                    <tbody>
-                     <tr id="TSDatos">
-                        <td>01800</td>
-                        <td>Santiago Munera</td>
-                        <td>324390</td>
-                        <td>crr 51 #12-12</td>
-                        <td>
-                            <i class="fa-solid fa-user-plus iClienteFrecuente"></i>
-                        </td>
-                     </tr>
-                     <tr id="TSDatos">
-                        <td>01801</td>
-                        <td>Santiago Berrio</td>
-                        <td>33232</td>
-                        <td>crr 12 #14-12</td>
-                        <td>
-                            <i class="fa-solid fa-user-plus iClienteFrecuente"></i>
-                        </td>
-                        </tr>
-                        <tr id="TSDatos">
-                            <td>01802</td>
-                            <td>Arley</td>
-                            <td>349231</td>
-                            <td>crr 81 #51-12</td>
-                            <td>
-                                <i class="fa-solid fa-user-plus iClienteFrecuente"></i>
-                            </tr>
+                      <tr>
+                        <td>01806</td>
+                        <td>Leidy</td>
+                        <td>5302391</td>
+                        <td>crr 01 #1-10</td>
+                        <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
+                    </tr>
                    </tbody>
                  </table>
                  
@@ -331,40 +300,40 @@
                              <td>Ximena</td>
                              <td>5273079</td>
                              <td>crr 21 #13-12</td>
-                             <td><i class="fa-solid fa-user-plus iClienteFrecuente"></i></td>
-                             <td><input type="checkbox" class="checkbox"></td>
+                             <td><i class="fa-solid fa-user-minus iconosRojos"></i></td>
+                             <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                          </tr>
                          <tr>
                             <td>01804</td>
                             <td>Carlos</td>
                             <td>5928392</td>
                             <td>crr 95 #11-15</td>
-                            <td><i class="fa-solid fa-user-plus iClienteFrecuente"></i></td>
-                            <td><input type="checkbox" class="checkbox"></td>
+                            <td><i class="fa-solid fa-user-minus iconosRojos"></i></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                         </tr>
                         <tr>
                             <td>01805</td>
                             <td>Juan David</td>
                             <td>5289052</td>
                             <td>crr 01 #1-10</td>
-                            <td><i class="fa-solid fa-user-plus iClienteFrecuente"></i></td>
-                            <td><input type="checkbox" class="checkbox"></td>
+                            <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                         </tr>
                         <tr>
                             <td>01806</td>
                             <td>Leidy</td>
                             <td>5302391</td>
-                            <td>cll 1 #1-1</td>
-                            <td><i class="fa-solid fa-user-plus iClienteFrecuente"></i></td>
-                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>crr 01 #1-10</td>
+                            <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                         </tr>
                         <tr>
                             <td>01807</td>
                             <td>Maria</td>
                             <td>5982653</td>
                             <td>cll 29 #02-25</td>
-                            <td><i class="fa-solid fa-user-plus iClienteFrecuente"></i></td>
-                            <td><input type="checkbox" class="checkbox"></td>
+                            <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
+                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
                         </tr>
                          <!-- Agregar más filas aquí -->
                      </table>
@@ -381,15 +350,24 @@
 
 
 
+     
+     
+
+
+
      <center>
       <div class="cajaBotones">
-      <button id="guardar" type="submit">Registrar</button>
+      <button id="cancelar" type="submit">Registrar</button>
       <div class="espacioEntreBotones"></div>
-      <button id="cancelar" type="button" onclick="window.location.href='pedidos.html'">Cancelar</button>
+      <button id="guardar" type="button" onclick="window.location.href='pedidos.html'">Cancelar</button>
      </div>
      </center>
      </div>
   </div>
+
+
+
+  
 <script src="js/Menu.js"></script>
 <script src="js/registropedidos.js"></script>
 <script type="text/javascript" src="js/dataTable.js"></script>

@@ -46,7 +46,7 @@
                   <!-- Flecha hacia abajo --></p>
                 <ul class="options">
                   <li onclick="window.location.href='gestionroles.html'">Roles</li>
-                  
+                  <li onclick="window.location.href='gestionPermisos.html'">Permisos</li>
                 </ul>
               </div>
               <div class="module">
@@ -102,8 +102,7 @@
             </center>
             <div class="botones">
                 <button class="boton botonAgregar" onclick="window.location.href='registrarCompras.html'"><i class="fa-solid fa-plus"></i> Agregar Compra</button>
-                <button class="boton boton-generar"><i class="fa-solid fa-file-pdf"></i> Generar reporte</button>
-            </div>
+                <button class="boton boton-generar" onclick="imprimirTabla()"><i class="fa-solid fa-file-pdf"></i> Generar reportes</button>            </div>
             <div class="tabla">
                 <table id="tablaInsumos" class="display" style="width:100%">
                     <thead>
@@ -126,7 +125,7 @@
                             <td>20 Kilos de pa...</td>
                             <td>Los monos</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on" ></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         <tr>
@@ -137,7 +136,7 @@
                             <td>50 Kilos de arro...</td>
                             <td>Cachucaxx</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         <tr>
@@ -148,7 +147,7 @@
                             <td>50 Kilos de arro...</td>
                             <td>El Chinito</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         <tr>
@@ -159,7 +158,7 @@
                             <td>20 Kilos de pa...</td>
                             <td>Serresiete</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         <tr>
@@ -170,7 +169,7 @@
                             <td>20 Kilos de zanah...</td>
                             <td>LeidyLegumbres</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         </tr><tr>
@@ -181,7 +180,7 @@
                             <td>10 Kilos de repo...</td>
                             <td>MariaVerde</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         <tr>
@@ -192,7 +191,7 @@
                             <td>20 Kilos de toma...</td>
                             <td>Los monos</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
 
@@ -204,7 +203,7 @@
                             <td>20 Kilos de cebol...</td>
                             <td>LeidyLegumbres</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         <tr>
@@ -215,7 +214,7 @@
                             <td>20 Kilos de limon</td>
                             <td>MariaLegumbre</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         <tr>
@@ -226,7 +225,7 @@
                             <td>10 canastas con huevos</td>
                             <td>Kikes</td>
                             <td>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
+                                <i class="fas fa-toggle-on toggle-icon"></i>
                             </td>
                         </tr>
                         <!-- Agregar más filas según sea necesario -->
@@ -255,7 +254,8 @@
 
     </script>
     <script src="js/Menu.js"></script>
-    <script src="js/gestionDeInsumos.js"></script>
+    <script src="js/gestionCategoriaInsumos.js"></script>
+    <script src="js/gestionOrdenProduccion.js"></script>
     <script type="text/javascript" src="js/dataTable.js"></script>
 
 </html>
