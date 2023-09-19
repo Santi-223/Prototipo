@@ -22,7 +22,7 @@ const listarInsumos = async (busqueda) => {
     let urlAPI = url;
     if (busqueda) {
         alert(busqueda)
-        urlAPI += `?_id=${encodeURIComponent(busqueda)}`;
+        urlAPI += `?id_insumo=${encodeURIComponent(busqueda)}`;
     }
 
     //url: Es la url de la api.
@@ -54,15 +54,15 @@ const listarInsumos = async (busqueda) => {
                     } else {
                         estado_nuevo = true;
                     }
-                    respuesta += `<tr><td>${insumo._id}</td>` +
+                    respuesta += `<tr><td>${insumo.id_insumo}</td>` +
                         `<td><img src="${insumo.imagen_insumo}" height="100px" width="100px"></td>` +
                         `<td>${insumo.nombre_insumo}</td>` +
                         `<td>${insumo.tipo_stock_insumo}</td>` +
                         `<td>${insumo.stock_insumo}</td>` +
                         `<td>${insumo.categoria_insumo}</td>` +
                         `<td>
-                            <i onclick="window.location.href='ModificarInsumo.html?_id=${insumo._id}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                            <i onclick="cambiarEstadoInsumo('${insumo._id}', '${estado_nuevo}')" class="${estado}"></i>
+                            <i onclick="window.location.href='ModificarInsumo.html?id_insumo=${insumo.id_insumo}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
+                            <i onclick="cambiarEstadoInsumo('${insumo.id_insumo}', '${estado_nuevo}')" class="${estado}"></i>
 
                         </td>`+
                         `</tr>`
@@ -77,7 +77,7 @@ const cambiarEstadoInsumo = async (id_insumo, estado_nuevo) => {
     try {
 
         let insumo = {
-            _id: id_insumo,
+            id_insumo: id_insumo,
             estado_insumo: estado_nuevo
         }
 
@@ -113,7 +113,7 @@ function consultarInsumo(busqueda) {
     let urlAPI = url;
     // Si se proporciona un parámetro de búsqueda, construye la URL de la API con ese parámetro
     if (busqueda) {
-        urlAPI += `?_id=${encodeURIComponent(busqueda)}`;
+        urlAPI += `?id_insumo=${encodeURIComponent(busqueda)}`;
     }
 
     fetch(urlAPI, {
@@ -126,7 +126,7 @@ function consultarInsumo(busqueda) {
             let insumo = data.insumo[0]; // Suponiendo que obtienes un solo cliente
 
             // Llenar los campos del formulario con los datos del cliente
-            document.getElementById('_id').value = insumo._id;
+            document.getElementById('id_insumo').value = insumo.id_insumo;
             document.getElementById('imagen_i').src = insumo.imagen_insumo;
             document.getElementById('imagen_insumo').value = insumo.imagen_insumo;
             document.getElementById('nombre_insumo').value = insumo.nombre_insumo;
@@ -140,13 +140,14 @@ function consultarInsumo(busqueda) {
 
 function validarCamposModificar() {
     // Obtén los valores de los campos de entrada
+    let id_insumo = document.getElementById('id_insumo').value;
     let imagen_insumo = document.getElementById('imagen_insumo').value;
     let nombre_insumo = document.getElementById('nombre_insumo').value;
     let tipo_stock_insumo = document.getElementById('tipo_stock_insumo').value;
     let categoria_insumo = document.getElementById('categoria_insumo').value;
 
     // Verifica si alguno de los campos está vacío o no cumple con tus criterios de validación
-    if ( imagen_insumo === "" || nombre_insumo === "" || tipo_stock_insumo === "0" || categoria_insumo === "0") {
+    if ( id_insumo === "" || imagen_insumo === "" || nombre_insumo === "" || tipo_stock_insumo === "0" || categoria_insumo === "0") {
         // Utiliza SweetAlert para mostrar una alerta de error
         Swal.fire({
             icon: 'error',
@@ -161,13 +162,14 @@ function validarCamposModificar() {
 
 function validarCamposAgregar() {
     // Obtén los valores de los campos de entrada
+    let id_insumo = document.getElementById('id_insumo').value;
     let imagen_insumo = document.getElementById('imagen_insumo').value;
     let nombre_insumo = document.getElementById('nombre_insumo').value;
     let tipo_stock_insumo = document.getElementById('tipo_stock_insumo').value;
     let categoria_insumo = document.getElementById('categoria_insumo').value;
 
     // Verifica si alguno de los campos está vacío o no cumple con tus criterios de validación
-    if ( imagen_insumo === "" || nombre_insumo === "" || tipo_stock_insumo === "0" || categoria_insumo === "0") {
+    if ( id_insumo === "" || nombre_insumo === "" || tipo_stock_insumo === "0" || categoria_insumo === "0") {
         // Utiliza SweetAlert para mostrar una alerta de error
         Swal.fire({
             icon: 'error',
@@ -181,12 +183,14 @@ function validarCamposAgregar() {
 }
 
 const registrarInsumo = async () => {
+    let id_insumo = document.getElementById('id_insumo').value;
     let imagen_insumo = document.getElementById('imagen_insumo').value;
     let nombre_insumo = document.getElementById('nombre_insumo').value
     let tipo_stock_insumo = document.getElementById('tipo_stock_insumo').value
     let categoria_insumo = document.getElementById('categoria_insumo').value
 
     let insumo = {
+        id_insumo: id_insumo,
         imagen_insumo: imagen_insumo,
         nombre_insumo: nombre_insumo,
         tipo_stock_insumo: tipo_stock_insumo,
@@ -204,10 +208,22 @@ const registrarInsumo = async () => {
         .then(json => {
             //alert(json.msg)//Mensaje que retorna la API
             console.log(json)
-            if (json.msg) {
+            if (json.msg=="Inserción exitosa") {
                 Swal.fire({
                     title: json.msg,
                     icon: 'success',
+                    showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // El usuario hizo clic en "OK"
+                        window.location.href = 'Insumos.html'; // Redireccionar después del clic en OK
+                    }
+                });
+            }else{
+                Swal.fire({
+                    title: json.msg,
+                    icon: 'error',
                     showCancelButton: false, // Evita que aparezca el botón "Cancelar"
                     confirmButtonText: 'OK',
                 }).then((result) => {
@@ -221,14 +237,14 @@ const registrarInsumo = async () => {
 }
 
 const actualizarInsumo = async () => {
-    let _id = document.getElementById('_id').value
+    let id_insumo = document.getElementById('id_insumo').value
     let imagen_insumo = document.getElementById('imagen_insumo').value;
     let nombre_insumo = document.getElementById('nombre_insumo').value
     let tipo_stock_insumo = document.getElementById('tipo_stock_insumo').value
     let categoria_insumo = document.getElementById('categoria_insumo').value
 
     let insumo = {
-        _id: _id,
+        id_insumo: id_insumo,
         imagen_insumo: imagen_insumo,
         nombre_insumo: nombre_insumo,
         tipo_stock_insumo: tipo_stock_insumo,

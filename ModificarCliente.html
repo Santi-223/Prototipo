@@ -105,7 +105,7 @@
         <div class="contForms">
           <div class="input1">
             <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del cliente</p>
-            <input id="_id" class="input-field gris" type="text" placeholder="" readonly>
+            <input id="id_cliente" class="input-field gris" type="text" placeholder="" readonly>
           </div>
           <br>
           <div class="input1">
@@ -141,7 +141,7 @@
     // Función para obtener el ID del cliente de la URL
     function obtenerIDClienteDesdeURL() {
       const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get('_id');
+      return urlParams.get('id_cliente');
     }
 
     // Obtener el ID del cliente de la URL

@@ -107,7 +107,7 @@
           <div class="contIzquierda">
             <div class="input1">
               <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del Insumo</p>
-              <input id="_id" class="input-field gris" type="text" placeholder="212" readonly>
+              <input id="id_insumo" class="input-field gris" type="text" placeholder="Id del insumo" readonly>
             </div>
             <br>
             <div class="input1">
@@ -145,7 +145,7 @@
               <br>
               <div class="input1 divImagen">
                 <p><i class="fa-solid fa-image iconosRojos"></i> URL Imagen</p>
-                <img id="imagen_i" src="https://tse2.mm.bing.net/th?id=OIP.U8HnwxkbTkhoZ_DTf7sCSgHaHa&pid=Api&P=0&h=180" width="200px">
+                <img id="imagen_i" src="" width="200px">
                 <br>
                 <br>
                 <input onchange="cargarImagen()" id="imagen_insumo" class="input-field2" type="text" placeholder="URL de la imagen">
@@ -173,7 +173,7 @@
     // Función para obtener el ID del cliente de la URL
     function obtenerIDInsumoDesdeURL() {
       const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get('_id');
+      return urlParams.get('id_insumo');
     }
 
     // Obtener el ID del cliente de la URL

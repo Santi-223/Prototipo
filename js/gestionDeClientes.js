@@ -33,7 +33,7 @@ const listarClientes = async (busqueda) => {
     let urlAPI = url;
     if (busqueda) {
         alert(busqueda)
-        urlAPI += `?_id=${encodeURIComponent(busqueda)}`;
+        urlAPI += `?id_cliente=${encodeURIComponent(busqueda)}`;
     }
 
     //url: Es la url de la api.
@@ -77,14 +77,14 @@ const listarClientes = async (busqueda) => {
                     }else {
                         cliente_frec_nuevo = true;
                     }
-                    respuesta += `<tr><td>${cliente._id}</td>` +
+                    respuesta += `<tr><td>${cliente.id_cliente}</td>` +
                         `<td>${cliente.nombre_cliente}</td>` +
                         `<td>${cliente.telefono_cliente}</td>` +
                         `<td>${cliente.direccion_cliente}</td>` +
                         `<td>
-                            <i onclick="window.location.href='ModificarCLiente.html?_id=${cliente._id}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                            <i onclick="cambiarEstadoCliente('${cliente._id}', '${estado_nuevo}')" class="${estado}"></i>
-                            <i onclick="cambiarEstadoClienteFrecuente('${cliente._id}', '${cliente_frec_nuevo}')" class="${frecuente}"></i>
+                            <i onclick="window.location.href='ModificarCLiente.html?id_cliente=${cliente.id_cliente}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
+                            <i onclick="cambiarEstadoCliente('${cliente.id_cliente}', '${estado_nuevo}')" class="${estado}"></i>
+                            <i onclick="cambiarEstadoClienteFrecuente('${cliente.id_cliente}', '${cliente_frec_nuevo}')" class="${frecuente}"></i>
                         </td>`+
                         `</tr>`
                 })
@@ -94,11 +94,13 @@ const listarClientes = async (busqueda) => {
 }
 
 const registrarCliente = async () => {
+    let _id = document.getElementById('id_cliente').value
     let _nombre = document.getElementById('nombre_cliente').value
     let _telefono = document.getElementById('telefono_cliente').value
     let _direccion = document.getElementById('direccion_cliente').value
 
     let cliente = {
+        id_cliente: _id,
         nombre_cliente: _nombre,
         telefono_cliente: _telefono,
         direccion_cliente: _direccion
@@ -114,10 +116,22 @@ const registrarCliente = async () => {
         .then(json => {
             //alert(json.msg)//Mensaje que retorna la API
             console.log(json)
-            if (json.msg) {
+            if (json.msg=="Inserción exitosa") {
                 Swal.fire({
                     title: json.msg,
                     icon: 'success',
+                    showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // El usuario hizo clic en "OK"
+                        window.location.href = 'Clientes.html'; // Redireccionar después del clic en OK
+                    }
+                });
+            }else{
+                Swal.fire({
+                    title: json.msg,
+                    icon: 'error',
                     showCancelButton: false, // Evita que aparezca el botón "Cancelar"
                     confirmButtonText: 'OK',
                 }).then((result) => {
@@ -136,7 +150,7 @@ function consultarClientes(busqueda) {
     let urlAPI = url;
     // Si se proporciona un parámetro de búsqueda, construye la URL de la API con ese parámetro
     if (busqueda) {
-        urlAPI += `?_id=${encodeURIComponent(busqueda)}`;
+        urlAPI += `?id_cliente=${encodeURIComponent(busqueda)}`;
     }
 
     fetch(urlAPI, {
@@ -149,7 +163,7 @@ function consultarClientes(busqueda) {
             let cliente = data.cliente[0]; // Suponiendo que obtienes un solo cliente
 
             // Llenar los campos del formulario con los datos del cliente
-            document.getElementById('_id').value = cliente._id;
+            document.getElementById('id_cliente').value = cliente.id_cliente;
             document.getElementById('nombre_cliente').value = cliente.nombre_cliente;
             document.getElementById('telefono_cliente').value = cliente.telefono_cliente;
             document.getElementById('direccion_cliente').value = cliente.direccion_cliente;
@@ -160,13 +174,13 @@ function consultarClientes(busqueda) {
 }
 
 const actualizarCliente = async () => {
-    let _id = document.getElementById('_id').value
+    let id_cliente = document.getElementById('id_cliente').value
     let _nombre = document.getElementById('nombre_cliente').value
     let _telefono = document.getElementById('telefono_cliente').value
     let _direccion = document.getElementById('direccion_cliente').value
 
     let cliente = {
-        _id: _id,
+        id_cliente: id_cliente,
         nombre_cliente: _nombre,
         telefono_cliente: _telefono,
         direccion_cliente: _direccion
@@ -199,7 +213,7 @@ const cambiarEstadoCliente = async (id_cliente, estado_nuevo) => {
     try {
 
         let cliente = {
-            _id: id_cliente,
+            id_cliente: id_cliente,
             estado_cliente: estado_nuevo
         }
 
@@ -236,7 +250,7 @@ const cambiarEstadoClienteFrecuente = async (id_cliente, estado_nuevo) => {
     try {
 
         let cliente = {
-            _id: id_cliente,
+            id_cliente: id_cliente,
             cliente_frecuente: estado_nuevo
         }
 
@@ -274,12 +288,13 @@ const cambiarEstadoClienteFrecuente = async (id_cliente, estado_nuevo) => {
 
 function validarCamposAgregar() {
     // Obtén los valores de los campos de entrada
+    const idCliente = document.getElementById("id_cliente").value;
     const nombreCliente = document.getElementById("nombre_cliente").value;
     const telefonoCliente = document.getElementById("telefono_cliente").value;
     const direccionCliente = document.getElementById("direccion_cliente").value;
 
     // Verifica si alguno de los campos está vacío o no cumple con tus criterios de validación
-    if (nombreCliente.trim() === "" || telefonoCliente.trim() === "" || direccionCliente.trim() === "") {
+    if (idCliente.trim() === "" || nombreCliente.trim() === "" || telefonoCliente.trim() === "" || direccionCliente.trim() === "") {
         // Utiliza SweetAlert para mostrar una alerta de error
         Swal.fire({
             icon: 'error',
@@ -294,12 +309,13 @@ function validarCamposAgregar() {
 
 function validarCamposModificar() {
     // Obtén los valores de los campos de entrada
+    const idCliente = document.getElementById("id_cliente").value;
     const nombreCliente = document.getElementById("nombre_cliente").value;
     const telefonoCliente = document.getElementById("telefono_cliente").value;
     const direccionCliente = document.getElementById("direccion_cliente").value;
 
     // Verifica si alguno de los campos está vacío o no cumple con tus criterios de validación
-    if (nombreCliente.trim() === "" || telefonoCliente.trim() === "" || direccionCliente.trim() === "") {
+    if (idCliente.trim() === "" || nombreCliente.trim() === "" || telefonoCliente.trim() === "" || direccionCliente.trim() === "") {
         // Utiliza SweetAlert para mostrar una alerta de error
         Swal.fire({
             icon: 'error',
