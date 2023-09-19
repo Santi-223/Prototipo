@@ -100,4 +100,13 @@
     width: 45%; /* Ajusta el ancho de los botones */
 }
 
+#guardar {
+  background-color: #722F37;
+  color: white;
+}
+
+#cancelar {
+  background-color: #E12424;
+  color: white;
+}
 

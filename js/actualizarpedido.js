@@ -211,9 +211,7 @@ function seleccionarFila(checkbox) {
 //VALIDACION
 
 
-const registrar = async()=>{
-
-    
+const actualizar = async()=>{
 
     let idpedido= document.getElementById('idpedido').value;
     let preciopedido = document.getElementById('preciopedido').value
@@ -248,7 +246,7 @@ else {
 
 Swal.fire({
     icon: 'success',
-    title: 'El pedido ha sido registrado',
+    title: 'El pedido ha sido actualizado',
     timer: 4000}).then(() => {window.location.href='pedidos.html'});}}
 
     

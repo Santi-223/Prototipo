@@ -17,6 +17,7 @@
     <title>LuchoSoft</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 </head>
@@ -47,7 +48,6 @@
               <!-- Flecha hacia abajo --></p>
             <ul class="options">
               <li onclick="window.location.href='gestionroles.html'">Roles</li>
-              <li onclick="window.location.href='gestionPermisos.html'">Permisos</li>
             </ul>
           </div>
           <div class="module">
@@ -55,7 +55,6 @@
             </p>
             <ul class="options">
               <li onclick="window.location.href='gestionUsuario.html'">Usuarios</li>
-              <li onclick="window.location.href='accso.html'">Acceso</li>
             </ul>
           </div>
           <div class="module">
@@ -95,7 +94,10 @@
   
         </div>
       </div>
+
+
         <div class="contenido">
+          <div id="bordeformulario">
             <center>
                 <div id="titulo">
                     <h1>Registrar Rol</h1>
@@ -105,129 +107,104 @@
 
 
 
-    ㅤ
-    <div id="contenedorcito">
-      <div class="input-container">
-          <div id="kaka">
-              <p id="skad"> <span class="icon key-icon iconosRojos"></span>ID</p>
-         
-          <input class="input-field" type="text" placeholder="001">
-          </div>
-          
-      </div>
-    
-      <div class="input-container">
-          <div id="eo">
-              <p id="textito"> <span class="fa-solid fa-font iconosRojos"></span> Nombre</p>
-         
-          <input class="input-field" type="text" placeholder="Insertar nombre">
-          </div>
-          
-      </div>
-    
-    
-     
-    
-     
-    </div>
+    <br>
+    <br>
+    <br>
+    <br>
 
-
-<div id="contenedorcito">
+<form>
+  <div id="contenedorsito">
     <div class="input-container">
-        <div id="kaki">
-            
-            <p id="skads"><span class="fa-solid fa-message iconosRojos"></span> Descripción del Rol</p>
-            <input class="input-field3" type="text" placeholder="Descripción de Rol" style="max-width: 760px;">
+        <div id="eo">
+            <p id="textito"> <span class="icon key-icon iconosRojos"></span>ID del rol</p>
+       
+        <input id="idrol" class="input-field" type="number" placeholder="1000">
         </div>
+        
+    </div>
 
+    <div class="input-container">
+        <div id="eo">
+            <p id="textito"> <span class="icon fa-solid fa-font iconosRojos"></span> Nombre del rol</p>
+       
+        <input id="nombrerol" class="input-field" type="text" placeholder="Insertar nombre">
+        </div>
+        
+    </div>
+    <div class="input-container">
+        <div id="eo">
+            <p id="textito"> <span class="icon fa-solid fa-message iconosRojos"></span> Descripción del rol</p>
+       
+        <input id="descrol" class="input-field" type="text" placeholder="Insertar descripción">
+        </div>
+        
+    </div>
+    <div class="input-container">
+      <div class="contDerechaAbajo">
+        <div id="seleccionarpermisos">
+          <div id="tabla-contenedor">
+            <table id="tablita">
+              <thead>
+                <tr>
+                  <th id="fondotabla" style="color: rgb(255, 255, 255);">Seleccionar permisos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox" class="checkbox">
+                    Permiso 1
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" class="checkbox">
+                    Permiso 2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" class="checkbox">
+                    Permiso 3
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" class="checkbox">
+                    Permiso 4
+                  </td>
+                </tr>
 
-
+                <!-- Agrega más registros aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
+        
+    </div>
 
-
+   
 </div>
 
-
-
-
-
-
-
-
-
-
-<div class="contDerechaAbajo">
-    <div id="seleccionarpermisos">
-      <div id="tabla-contenedor">
-        <table id="tablita">
-          <thead>
-            <tr>
-              <th id="fondotabla" style="color: rgb(255, 255, 255);">Seleccionar Categoria</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox">
-                Permiso 1
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox">
-                Permiso 2
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox">
-                Permiso 3
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="checkbox">
-                Permiso 4
-              </td>
-            </tr>
-
-            <!-- Agrega más registros aquí -->
-          </tbody>
-        </table>
-      </div>
-    </div>
+<center>
+  <div class="cajaBotones">
+    <button onclick="registrar()" id="cancelar" type="button">Guardar</button>
+    <div class="espacioEntreBotones"></div>
+    <button id="guardar" type="button" onclick="window.location.href='gestionroles.html'">Cancelar</button>
   </div>
-
-
-
-
-
-
-  <center>
-    <div class="cajaBotones">
-      <button id="cancelar" type="submit">Guardar</button>
-      <div class="espacioEntreBotones"></div>
-      <button id="guardar" type="button" onclick="window.location.href='gestionroles.html'">Cancelar</button>
-    </div>
-  </center>
-
-
-
-           
+</center>
+</form>
+    </div> 
 </div>
 </div>
-
-
-
 <script>
 $(document).ready(function () {
     $('table.display').DataTable();
 });
 </script>
 <script src="js/Menu.js"></script>
-<script src="js/gestionJuanda.js"></script>
+<script src="js/gestionroles.js"></script>
 <script type="text/javascript" src="js/dataTable.js"></script>
-
-<link rel="stylesheet" href="gestionderoles.html">
 
 

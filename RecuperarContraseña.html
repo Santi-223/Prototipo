@@ -15,6 +15,7 @@
     <title>Actualizar contraseña</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -44,18 +45,18 @@
                 <form>
                     <div class="input-group">
                         <label for="contrasenaAntigua">Ingrese correo</label>
-                        <input type="email" id="contrasenaAntigua" required>
+                        <input type="email" id="correoacceso" required>
                     </div>
                     <div class="input-group">
                         <label for="contrasenaNueva">Ingrese contraseña nueva</label>
-                        <input type="password" id="contrasenaNueva" required>
+                        <input type="password" id="contrasenaacceso" required>
                     </div>
                     <div class="input-group">
                         <label for="confirmarContrasena">Confirmar contraseña</label>
-                        <input type="password" id="confirmarContrasena" required>
+                        <input type="password" id="contrasenaacceso2" required>
                     </div>
                     <div class="cajaBotonesRecuperar">
-                        <button id="cancelar" type="submit">Confirmar</button>
+                        <button id="cancelar" type="button" onclick="validacionrecpw()">Confirmar</button>
                         <button id="guardar" type="button" onclick="window.location.href='accso.html'">Cancelar</button>
                     </div>
                 </form>
@@ -64,7 +65,7 @@
       </div>
 
 <script src="js/Menu.js"></script>
-<script src="js/gestionDeInicio.js"></script>
+<script src="js/validacionacceso.js"></script>
 
 </html>
 

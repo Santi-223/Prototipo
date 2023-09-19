@@ -17,6 +17,8 @@
     <title>LuchoSoft</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 </head>
@@ -47,7 +49,6 @@
                   <!-- Flecha hacia abajo --></p>
                 <ul class="options">
                   <li onclick="window.location.href='gestionroles.html'">Roles</li>
-                  <li onclick="window.location.href='gestionPermisos.html'">Permisos</li>
                 </ul>
               </div>
               <div class="module">
@@ -55,7 +56,6 @@
                 </p>
                 <ul class="options">
                   <li onclick="window.location.href='gestionUsuario.html'">Usuarios</li>
-                  <li onclick="window.location.href='accso.html'">Acceso</li>
                 </ul>
               </div>
               <div class="module">
@@ -101,9 +101,9 @@
                     <h1>Actualización de proveedores</h1>
                 </div>
             </center>
-  <p>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+  <p>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
 
-    <div id="contenedorsito">
+    <div id="contenedorsito" class="divproveedores">
         <div class="input-container">
             <div id="eo">
                 <p id="textito"> <span class="icon key-icon iconosRojos"></span>ID</p>
@@ -115,9 +115,9 @@
 
         <div class="input-container">
             <div id="eo">
-                <p id="textito"> <span class="icon user-icon iconosRojos"></span>Nombre</p>
+                <p id="textito"> <span class="fa-solid fa-font iconosRojos"></span> Nombre</p>
            
-            <input class="input-field" type="text" placeholder="Insertar nombre">
+            <input id="nombreacpro" class="input-field" type="text" placeholder="Insertar nombre">
             </div>
             
         </div>
@@ -125,7 +125,7 @@
             <div id="eo">
                 <p id="textito"> <span class="fa-sharp fa-solid fa-location-dot iconosRojos"></span>   Dirección</p>
            
-            <input class="input-field" type="text" placeholder="Insertar dirección">
+            <input id="diracpro" class="input-field" type="text" placeholder="Insertar dirección">
             </div>
             
         </div>
@@ -133,15 +133,16 @@
             <div id="eo">
                 <p id="textito"> <span class="fa-solid fa-phone iconosRojos"></span>  Teléfono</p>
            
-            <input class="input-field" type="text" placeholder="Insertar telefono">
+            <input  id="teleacpro" class="input-field" type="text" placeholder="Insertar telefono">
             </div>
             
         </div>
 
        
     </div>
-    <div class="botonsito">
-        <button class="boton boton-generar"><i class=""></i> Guardar</button>ㅤㅤㅤㅤㅤ
+    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+    <div id="botoms" class="botonsito">
+        <button onclick="validacionacpro()" class="boton boton-generar"><i class=""></i> Guardar</button>ㅤㅤㅤㅤㅤ
         <button class="boton botonAgregar" onclick="window.location.href='gestionProveedores.html'"><i class=""></i> Cancelar</button>
     </div>
 
@@ -162,6 +163,7 @@
         });
     </script>
     <script src="js/Menu.js"></script>
+    <script src="js/validacionProveedores.js"></script>
     <script type="text/javascript" src="js/dataTable.js"></script>
 
 </html>

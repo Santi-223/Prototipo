@@ -3,7 +3,6 @@ td i{
 }
 
 .contForms {
-    margin-top: 40px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -30,13 +29,8 @@ input {
     height: 50px;
 }
 
-.inputCantidad{
-    width: 750px;
-    text-align: left;
-}
-
-.inputCantidad select {
-    width: 100%;
+.input1 select {
+    width: 300px;
     height: 50px;
 }
 
@@ -146,7 +140,7 @@ input {
 
 
 .cajaBotones {
-    margin-top: 20px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
 }
@@ -175,4 +169,47 @@ input {
 .espacioEntreBotones {
     width: 40px;
     /* Ajusta el ancho del espacio según tus preferencias */
+}
+
+.gris {
+    color: #6d6d6d;
+}
+
+.parrafoGris {
+    color: gray;
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid #6d6d6d;
+}
+
+.input1 input {
+    padding-left: 10px;
+    width: 300px;
+    height: 50px;
+}
+
+
+.input1 i {
+    font-size: 20px;
+}
+
+.divImagen{
+    border-radius: 10px;
+    border: 1px solid #6d6d6d;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.contenido2{
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #f8f8f8;
+}
+
+#_id{
+    background-color:#ccc;
 }

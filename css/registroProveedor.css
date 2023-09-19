@@ -35,7 +35,7 @@
   }
 
   #contenedorsito{
-    margin-left: 270px;
+    margin-left: 200px;
     margin-top: -50px;
   }
 
@@ -45,3 +45,32 @@
     margin-top: -30px;
     padding: 50px 50px;
   }
+  .divproveedores {
+    max-width: 520px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    justify-content: center;
+   
+}
+
+.divproveedores h2 {
+    margin-bottom: 0px;
+
+}
+
+.divproveedores form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+body{
+  justify-content: center;
+}
+
+#botoms{
+  margin-left: 270px;
+}

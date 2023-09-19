@@ -1,20 +1,6 @@
-$(document).ready(function() {
-    $(".toggle-icon").click(function() {
-        var $toggleIcon = $(this);
-        var currentState = $toggleIcon.attr("data-state");
+let url = 'https://api-luchosoft.onrender.com/api/insumos'
 
-        if (currentState === "on") {
-            $toggleIcon.removeClass("bi-toggle2-on").addClass("bi-toggle2-off");
-            $toggleIcon.attr("data-state", "off");
-            $(this).toggleClass("gris");
-        } else {
-            $toggleIcon.removeClass("bi-toggle2-off").addClass("bi-toggle2-on");
-            $toggleIcon.attr("data-state", "on");
-        }
-    });
-});
-
-function seleccionarImagen(){
+function seleccionarImagen() {
     const input = document.createElement("input");
     input.type = "file";
     input.accept = "image/*";
@@ -24,6 +10,259 @@ function seleccionarImagen(){
             console.log("Imagen seleccionada:", selectedImage);
         }
     });
-    
+
     input.click();
-  }
+}
+
+const listarInsumos = async (busqueda) => {
+    let respuesta = ''
+    let body = document.getElementById('contenidoInsumos')
+
+    // Si se proporciona un parámetro de búsqueda, construye la URL de la API con ese parámetro
+    let urlAPI = url;
+    if (busqueda) {
+        alert(busqueda)
+        urlAPI += `?_id=${encodeURIComponent(busqueda)}`;
+    }
+
+    //url: Es la url de la api.
+    //Al deslpegarla en el servidor colocar la api del servidor
+    fetch(urlAPI, {
+        method: 'GET',
+        mode: 'cors',
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+        .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
+        .then(function (data) {
+            let listaInsumos = data.insumo //Capturar el array devuelto por la api
+
+            // Limpia la tabla antes de agregar datos nuevos
+            table.clear().draw();
+
+            console.log(listaInsumos)
+            datos =
+                listaInsumos.map(function (insumo) {//Recorrer el array
+                    let estado = ""
+                    if (insumo.estado_insumo == false) {
+                        estado = "fas fa-toggle-off iconos toggle-icon gris"
+                    } else {
+                        estado = "fas fa-toggle-on iconos toggle-icon"
+                    }
+                    let estado_nuevo;
+                    if (insumo.estado_insumo == true) {
+                        estado_nuevo = false;
+                    } else {
+                        estado_nuevo = true;
+                    }
+                    respuesta += `<tr><td>${insumo._id}</td>` +
+                        `<td><img src="${insumo.imagen_insumo}" height="100px" width="100px"></td>` +
+                        `<td>${insumo.nombre_insumo}</td>` +
+                        `<td>${insumo.tipo_stock_insumo}</td>` +
+                        `<td>${insumo.stock_insumo}</td>` +
+                        `<td>${insumo.categoria_insumo}</td>` +
+                        `<td>
+                            <i onclick="window.location.href='ModificarInsumo.html?_id=${insumo._id}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
+                            <i onclick="cambiarEstadoInsumo('${insumo._id}', '${estado_nuevo}')" class="${estado}"></i>
+
+                        </td>`+
+                        `</tr>`
+                })
+            // Agrega los datos a la tabla y redibuja la tabla
+            table.rows.add($(respuesta)).draw();
+        })
+}
+
+const cambiarEstadoInsumo = async (id_insumo, estado_nuevo) => {
+
+    try {
+
+        let insumo = {
+            _id: id_insumo,
+            estado_insumo: estado_nuevo
+        }
+
+        const response = await fetch(url, {
+            method: 'PUT',
+            mode: 'cors',
+            body: JSON.stringify(insumo),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        });
+
+        if (response.ok) {
+            const json = await response.json();
+            Swal.fire({
+                title: json.msg,
+                icon: 'success',
+                showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                confirmButtonText: 'OK',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // El usuario hizo clic en "OK"
+                    window.location.href = 'Insumos.html'; // Redireccionar después del clic en OK
+                }
+            });
+        } else {
+            alert("Error al cambiar el estado del cliente.");
+        }
+    } catch (error) {
+        console.error("Error de red:", error);
+    }
+}
+
+function consultarInsumo(busqueda) {
+    let urlAPI = url;
+    // Si se proporciona un parámetro de búsqueda, construye la URL de la API con ese parámetro
+    if (busqueda) {
+        urlAPI += `?_id=${encodeURIComponent(busqueda)}`;
+    }
+
+    fetch(urlAPI, {
+        method: 'GET',
+        mode: 'cors',
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+        .then((resp) => resp.json())
+        .then(function (data) {
+            let insumo = data.insumo[0]; // Suponiendo que obtienes un solo cliente
+
+            // Llenar los campos del formulario con los datos del cliente
+            document.getElementById('_id').value = insumo._id;
+            document.getElementById('imagen_i').src = insumo.imagen_insumo;
+            document.getElementById('imagen_insumo').value = insumo.imagen_insumo;
+            document.getElementById('nombre_insumo').value = insumo.nombre_insumo;
+            document.getElementById('tipo_stock_insumo').value = insumo.tipo_stock_insumo;
+            document.getElementById('categoria_insumo').value = insumo.categoria_insumo;
+        })
+        .catch(function (error) {
+            console.error('Error al obtener los detalles del cliente:', error);
+        });
+}
+
+function validarCamposModificar() {
+    // Obtén los valores de los campos de entrada
+    let imagen_insumo = document.getElementById('imagen_insumo').value;
+    let nombre_insumo = document.getElementById('nombre_insumo').value;
+    let tipo_stock_insumo = document.getElementById('tipo_stock_insumo').value;
+    let categoria_insumo = document.getElementById('categoria_insumo').value;
+
+    // Verifica si alguno de los campos está vacío o no cumple con tus criterios de validación
+    if ( imagen_insumo === "" || nombre_insumo === "" || tipo_stock_insumo === "0" || categoria_insumo === "0") {
+        // Utiliza SweetAlert para mostrar una alerta de error
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Por favor, completa todos los campos correctamente.',
+        });
+    } else {
+        // Todos los campos son válidos, llama a la función agregarCliente
+        actualizarInsumo();
+    }
+}
+
+function validarCamposAgregar() {
+    // Obtén los valores de los campos de entrada
+    let imagen_insumo = document.getElementById('imagen_insumo').value;
+    let nombre_insumo = document.getElementById('nombre_insumo').value;
+    let tipo_stock_insumo = document.getElementById('tipo_stock_insumo').value;
+    let categoria_insumo = document.getElementById('categoria_insumo').value;
+
+    // Verifica si alguno de los campos está vacío o no cumple con tus criterios de validación
+    if ( imagen_insumo === "" || nombre_insumo === "" || tipo_stock_insumo === "0" || categoria_insumo === "0") {
+        // Utiliza SweetAlert para mostrar una alerta de error
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Por favor, completa todos los campos correctamente.',
+        });
+    } else {
+        // Todos los campos son válidos, llama a la función agregarCliente
+        registrarInsumo();
+    }
+}
+
+const registrarInsumo = async () => {
+    let imagen_insumo = document.getElementById('imagen_insumo').value;
+    let nombre_insumo = document.getElementById('nombre_insumo').value
+    let tipo_stock_insumo = document.getElementById('tipo_stock_insumo').value
+    let categoria_insumo = document.getElementById('categoria_insumo').value
+
+    let insumo = {
+        imagen_insumo: imagen_insumo,
+        nombre_insumo: nombre_insumo,
+        tipo_stock_insumo: tipo_stock_insumo,
+        stock_insumo: 0,
+        categoria_insumo: categoria_insumo
+    }
+
+    fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        body: JSON.stringify(insumo),//Convertir el objeto _usuario  a un JSON
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+        .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
+        .then(json => {
+            //alert(json.msg)//Mensaje que retorna la API
+            console.log(json)
+            if (json.msg) {
+                Swal.fire({
+                    title: json.msg,
+                    icon: 'success',
+                    showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // El usuario hizo clic en "OK"
+                        window.location.href = 'Insumos.html'; // Redireccionar después del clic en OK
+                    }
+                });
+            }
+        })
+}
+
+const actualizarInsumo = async () => {
+    let _id = document.getElementById('_id').value
+    let imagen_insumo = document.getElementById('imagen_insumo').value;
+    let nombre_insumo = document.getElementById('nombre_insumo').value
+    let tipo_stock_insumo = document.getElementById('tipo_stock_insumo').value
+    let categoria_insumo = document.getElementById('categoria_insumo').value
+
+    let insumo = {
+        _id: _id,
+        imagen_insumo: imagen_insumo,
+        nombre_insumo: nombre_insumo,
+        tipo_stock_insumo: tipo_stock_insumo,
+        categoria_insumo: categoria_insumo
+    }
+
+    fetch(url, {
+        method: 'PUT',
+        mode: 'cors',
+        body: JSON.stringify(insumo),//Convertir el objeto _usuario  a un JSON
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+        .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
+        .then(json => {
+            Swal.fire({
+                title: json.msg,
+                icon: 'success',
+                showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                confirmButtonText: 'OK',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // El usuario hizo clic en "OK"
+                    window.location.href = 'Insumos.html'; // Redireccionar después del clic en OK
+                }
+            });
+        })
+}
+
+function cargarImagen(){
+    let src = document.getElementById('imagen_insumo').value
+
+    if (src === ""){
+        src = "https://png.pngtree.com/png-clipart/20190705/original/pngtree-gallery-vector-icon-png-image_4279768.jpg"
+    }
+
+    document.getElementById('imagen_i').src = src
+}

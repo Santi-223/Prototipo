@@ -96,41 +96,44 @@
       </div>
     </div>
     <div class="contenido">
-      <center>
-        <h3>Modificar Cliente</h3>
-      </center>
-      <br>
-      <div class="contForms">
-        <div class="input1">
-          <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del cliente</p>
-          <input id="_id" class="input-field gris" type="text" placeholder="" readonly>
-        </div>
+      <div class="contenido2">
         <br>
-        <div class="input1">
-          <p><i class="fa-solid fa-font iconosRojos"></i> Nombre del cliente</p>
-          <input id="nombre_cliente" class="input-field" type="text" placeholder="Ingrese el nombre">
-        </div>
+        <center>
+          <h3>Modificar Cliente</h3>
+        </center>
         <br>
-        <div class="input1">
-          <p><i class="fa-solid fa-phone iconosRojos"></i> Telefono del cliente</p>
-          <input id="telefono_cliente" class="input-field" type="text" placeholder="Ingrese el telefono">
+        <div class="contForms">
+          <div class="input1">
+            <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del cliente</p>
+            <input id="_id" class="input-field gris" type="text" placeholder="" readonly>
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-solid fa-font iconosRojos"></i> Nombre del cliente</p>
+            <input id="nombre_cliente" class="input-field" type="text" placeholder="Ingrese el nombre">
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-solid fa-phone iconosRojos"></i> Telefono del cliente</p>
+            <input id="telefono_cliente" class="input-field" type="text" placeholder="Ingrese el telefono">
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-sharp fa-solid fa-location-dot iconosRojos"></i> Dirección del cliente</p>
+            <input id="direccion_cliente" class="input-field" type="text" placeholder="Ingrese la dirección">
+          </div>
+          <br>
         </div>
-        <br>
-        <div class="input1">
-          <p><i class="fa-sharp fa-solid fa-location-dot iconosRojos"></i> Dirección del cliente</p>
-          <input id="direccion_cliente" class="input-field" type="text" placeholder="Ingrese la dirección">
-        </div>
+  
+        <center>
+          <div class="cajaBotones">
+            <button onclick="validarCamposModificar()" id="guardar" type="submit">Guardar</button>
+            <div class="espacioEntreBotones"></div>
+            <button id="cancelar" type="button" onclick="window.location.href='Clientes.html'">Cancelar</button>
+          </div>
+        </center>
         <br>
       </div>
-
-      <center>
-        <div class="cajaBotones">
-          <button onclick="actualizarCliente()" id="guardar" type="submit">Guardar</button>
-          <div class="espacioEntreBotones"></div>
-          <button id="cancelar" type="button" onclick="window.location.href='Clientes.html'">Cancelar</button>
-        </div>
-      </center>
-
     </div>
   </div>
 

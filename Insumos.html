@@ -18,6 +18,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -102,7 +103,7 @@
             </center>
             <div class="botones">
                 <button class="boton botonAgregar" onclick="window.location.href='AgregarInsumo.html'"><i class="fa-solid fa-plus"></i> Agregar insumo</button>
-                <button class="boton boton-generar"><i class="fa-solid fa-file-pdf"></i> Generar reportes</button>
+                <button onclick="window.print()" class="boton boton-generar"><i class="fa-solid fa-file-pdf"></i> Generar reportes</button>
             </div>
             <div class="tabla">
                 <table id="tablaDataTable" class="display" style="width:100%">
@@ -111,159 +112,14 @@
                             <th><i class="fa-solid fa-key iconosRojos"></i> ID</th>
                             <th><i class="fa-solid fa-image iconosRojos"></i> Imagen</th>
                             <th><i class="fa-solid fa-font iconosRojos"></i> Nombre</th>
-                            <th><i class="fas fa-balance-scale iconosRojos"></i> Unidades</th>
+                            <th><i class="fas fa-balance-scale iconosRojos"></i> Unidades de medida</th>
                             <th><i class="fa-solid fa-arrow-up-wide-short iconosRojos"></i> Stock</th>
                             <th><i class="fa-solid fa-utensils iconosRojos"></i> Categoría</th>
                             <th><i class="fa-solid fa-gear iconosRojos"></i> Funciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><img src="ruta-a-tu-imagen-1.jpg" width="50"></td>
-                            <td>Insumo 1</td>
-                            <td>Kilogramos</td>
-                            <td>100</td>
-                            <td>Categoría A</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>7</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td><img src="ruta-a-tu-imagen-2.jpg" width="50"></td>
-                            <td>Insumo 2</td>
-                            <td>Kilogramos</td>
-                            <td>50</td>
-                            <td>Categoría B</td>
-                            <td>
-                                <i onclick="window.location.href='ModificarInsumo.html'" class="fa-solid fa-pen-to-square iconosRojos"></i>
-                                <i class="bi bi-toggle2-on iconos toggle-icon" data-state="on"></i>
-                            </td>
-                        </tr>
-                        <!-- Agregar más filas según sea necesario -->
+                    <tbody id="contenidoInsumos">
+                        
                     </tbody>
                 </table>
             </div>
@@ -271,8 +127,10 @@
     </div>
 
     <script>
+        var table;
+
         $(document).ready(function () {
-            var table = $('table.display').DataTable({
+            table = $('table.display').DataTable({
                 lengthMenu: [5], // Establece el número de registros a mostrar en el dropdown
                 pageLength: 5, // Muestra solo 5 registros por página
                 paging: true, // Activa la paginación
@@ -285,6 +143,8 @@
             $('.dataTables_info').hide();
             $('.dataTables_filter').addClass('pull-left');
 
+            // Llama a listarClientes() después de la inicialización de DataTable
+            listarInsumos();
         });
 
     </script>

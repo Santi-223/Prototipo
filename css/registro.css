@@ -163,7 +163,7 @@
   #seleccionarpermisos {
     position: relative;
       display: flex;
-      margin-right: 0px;
+      margin-left: 25px;
       
   
   
@@ -239,4 +239,20 @@
 
 }
 
+#contenedorregistroroles{
+  display: flex;
+}
 
+#contenedorregistroroles{
+  margin-left: 270px;
+  margin-top: -50px;
+}
+
+#contenedorsitos{
+  display: flex;
+}
+
+#contenedorsito{
+  margin-left: 350px;
+  margin-top: -50px;
+}

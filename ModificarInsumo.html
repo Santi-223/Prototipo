@@ -18,9 +18,10 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
-<body>
+<body onload="cargarDatos()">
   <div class="barraPrincipal">
     <div class="contenedor_1">
 
@@ -95,107 +96,93 @@
       </div>
     </div>
     <div class="contenido">
-      <center>
-        <h3>Modificar Insumo</h3>
-      </center>
-      <div class="contForms">
-        <div class="contIzquierda">
-          <div class="input1">
-            <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del Insumo</p>
-            <input class="input-field" type="text" placeholder="212" readonly>
-          </div>
-          <br>
-        </div>
-        <div class="contDerecha">
-          <div class="input1">
-            <p><i class="fa-solid fa-font iconosRojos"></i> Nombre del Insumo</p>
-            <input class="input-field2" type="text" placeholder="Nombre de rol">
-          </div>
-        </div>
-      </div>
-      <center>
-        <div class="inputCantidad">
-          <p class=""><i class="fas fa-balance-scale iconosRojos"></i> Unidades</p>
-          <select id="">
-            <option value="unidades">Unidades</option>
-            <option value="kilogramos">Kilogramos</option>
-            <option value="libras">Libras</option>
-            <option value="gramos">Gramos</option>
-          </select>
-        </div>
-      </center>
-      <br>
-      <div class="contFormsAbajo">
-        <div class="contIzquierdaAbajo">
-          <div>
-            <p><i class="fa-solid fa-image iconosRojos"></i> Imagen del insumo</p>
-            <div class="añadirImagen">
-              <div id="iconoEditar"><button class="btnSinFondo"><i onclick="seleccionarImagen()"
-                    class="fa-solid fa-pen-to-square iconosRojos"></i></button>
-              </div>
-              <div id="imgPerfil"><img src="archivos/imagenes/icono-imagen.png" height="120vh">
-              </div>
+      <div class="contenido2">
+        <br>
+        <center>
+          <h3>Modificar Insumo</h3>
+        </center>
+        <br>
+        <br>
+        <div class="contForms">
+          <div class="contIzquierda">
+            <div class="input1">
+              <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del Insumo</p>
+              <input id="_id" class="input-field gris" type="text" placeholder="212" readonly>
+            </div>
+            <br>
+            <div class="input1">
+              <p><i class="fa-solid fa-font iconosRojos"></i> Nombre del Insumo</p>
+              <input id="nombre_insumo" class="input-field2" type="text" placeholder="Nombre de rol">
+            </div>
+            <br>
+            <div class="input1">
+              <p class=""><i class="fas fa-balance-scale iconosRojos"></i> Unidades de medida</p>
+              <select id="tipo_stock_insumo">
+                <option value="0">Seleccionar un tipo</option>
+                <option value="unidades">Unidades</option>
+                <option value="kilogramos">Kilogramos</option>
+                <option value="libras">Libras</option>
+                <option value="gramos">Gramos</option>
+              </select>
+            </div>
+            <br>
+            <div class="input1">
+              <p class=""><i class="fa-solid fa-utensils iconosRojos"></i> Categoria de insumo</p>
+              <select id="categoria_insumo">
+                <option value="0">Seleccionar categoría</option>
+                <option value="frutas">Frutas</option>
+                <option value="vegetales">Vegetales</option>
+                <option value="salsas">Salsas</option>
+                <option value="granos">Granos</option>
+                <option value="carnes">Carnes</option>
+                <option value="bebidas">Bebidas</option>
+              </select>
             </div>
           </div>
-        </div>
-        <div class="contDerechaAbajo">
-          <div id="seleccionarpermisos">
-            <div id="tabla-contenedor">
-              <table id="tablita">
-                <thead>
-                  <tr>
-                    <th id="fondotabla" style="color: rgb(255, 255, 255);">Seleccionar Categoria</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <input type="checkbox" class="checkbox">
-                      Categoria 1
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type="checkbox" class="checkbox">
-                      Categoria 2
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type="checkbox" class="checkbox">
-                      Categoria 3
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type="checkbox" class="checkbox">
-                      Categoria 4
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type="checkbox" class="checkbox">
-                      Categoria 5
-                    </td>
-                  </tr>
-                  <!-- Agrega más registros aquí -->
-                </tbody>
-              </table>
-            </div>
+          <div class="contDerecha">
+            <center>
+              <br>
+              <br>
+              <div class="input1 divImagen">
+                <p><i class="fa-solid fa-image iconosRojos"></i> URL Imagen</p>
+                <img id="imagen_i" src="https://tse2.mm.bing.net/th?id=OIP.U8HnwxkbTkhoZ_DTf7sCSgHaHa&pid=Api&P=0&h=180" width="200px">
+                <br>
+                <br>
+                <input onchange="cargarImagen()" id="imagen_insumo" class="input-field2" type="text" placeholder="URL de la imagen">
+              </div>
+            </center>
+            <br>
           </div>
         </div>
+        <br>
+
+        <center>
+          <div class="cajaBotones">
+            <button onclick="validarCamposModificar()" id="guardar" type="submit">Guardar</button>
+            <div class="espacioEntreBotones"></div>
+            <button id="cancelar" type="button" onclick="window.location.href='Insumos.html'">Cancelar</button>
+          </div>
+        </center>
+        <br>
       </div>
-
-      <center>
-        <div class="cajaBotones">
-          <button id="guardar" type="submit">Guardar</button>
-          <div class="espacioEntreBotones"></div>
-          <button id="cancelar" type="button" onclick="window.location.href='Insumos.html'">Cancelar</button>
-        </div>
-      </center>
-
+      
     </div>
   </div>
+
+  <script>
+    // Función para obtener el ID del cliente de la URL
+    function obtenerIDInsumoDesdeURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('_id');
+    }
+
+    // Obtener el ID del cliente de la URL
+    const idInsumo = obtenerIDInsumoDesdeURL();
+
+    function cargarDatos() {
+      consultarInsumo(idInsumo);
+    }
+  </script>
 
 
   <script src="js/gestionDeInsumos.js"></script>

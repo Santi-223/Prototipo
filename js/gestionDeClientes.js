@@ -272,3 +272,43 @@ const cambiarEstadoClienteFrecuente = async (id_cliente, estado_nuevo) => {
 }
 
 
+function validarCamposAgregar() {
+    // Obtén los valores de los campos de entrada
+    const nombreCliente = document.getElementById("nombre_cliente").value;
+    const telefonoCliente = document.getElementById("telefono_cliente").value;
+    const direccionCliente = document.getElementById("direccion_cliente").value;
+
+    // Verifica si alguno de los campos está vacío o no cumple con tus criterios de validación
+    if (nombreCliente.trim() === "" || telefonoCliente.trim() === "" || direccionCliente.trim() === "") {
+        // Utiliza SweetAlert para mostrar una alerta de error
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Por favor, completa todos los campos correctamente.',
+        });
+    } else {
+        // Todos los campos son válidos, llama a la función agregarCliente
+        registrarCliente();
+    }
+}
+
+function validarCamposModificar() {
+    // Obtén los valores de los campos de entrada
+    const nombreCliente = document.getElementById("nombre_cliente").value;
+    const telefonoCliente = document.getElementById("telefono_cliente").value;
+    const direccionCliente = document.getElementById("direccion_cliente").value;
+
+    // Verifica si alguno de los campos está vacío o no cumple con tus criterios de validación
+    if (nombreCliente.trim() === "" || telefonoCliente.trim() === "" || direccionCliente.trim() === "") {
+        // Utiliza SweetAlert para mostrar una alerta de error
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Por favor, completa todos los campos correctamente.',
+        });
+    } else {
+        // Todos los campos son válidos, llama a la función agregarCliente
+        actualizarCliente();
+    }
+}
+
