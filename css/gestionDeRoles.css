@@ -43,6 +43,8 @@ input{
     color: gray;
 }
 
+
+
 .añadirImagen{
     background-color: #6d6d6d;
     height: 120px;
@@ -86,5 +88,9 @@ input{
     background-color: #E12424;
     color: white;
     margin-left: 100px;
+}
+
+.gris {
+    color: #6d6d6d;
 }
 

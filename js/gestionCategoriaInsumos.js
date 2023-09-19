@@ -13,3 +13,23 @@ $(document).ready(function() {
       }
     });
   });
+
+  //cambio de estado-visualización en columna
+
+  function cambiarEstado(icono) {
+    // Obtener la celda que muestra el estado
+    const celdaEstado = icono.closest("tr").querySelector(".estado");
+
+    // Cambiar el estado y la clase del ícono de alternancia
+    if (icono.classList.contains("Habilitado")) {
+      icono.classList.remove("Habilitado");
+      icono.classList.add("Inhabilitado");
+      celdaEstado.textContent = "Inhabilitado"; // Cambiar el estado en la columna
+      // Aquí puedes agregar la lógica para realizar acciones cuando se desactiva el toggle
+    } else {
+      icono.classList.remove("Inhabilitado");
+      icono.classList.add("Habilitado");
+      celdaEstado.textContent = "Habilitado"; // Cambiar el estado en la columna
+      // Aquí puedes agregar la lógica para realizar acciones cuando se activa el toggle
+    }
+  }

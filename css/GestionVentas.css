@@ -1,4 +1,36 @@
+#tablaInsumos tbody tr{
+    text-align: center;
+}
 
+.botones{
+    display: flex;
+    margin-left: 50%
+}
+
+.botones .boton{
+    width: 200px;
+}
+
+.btnVentas{
+    margin-top: 23px;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+.btnVentas button{
+    padding: 10px 40px;
+    /* Ajusta el padding para hacer los botones más largos */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    /* Ajusta el ancho de los botones */
+}
+.espacioEntreBotones {
+    width: 40px;
+    /* Ajusta el ancho del espacio según tus preferencias */
+}
 /*Estilo de los div*/
 
 .contForms{
@@ -150,21 +182,19 @@ input{
 #BtnAgregarIn button{
     width: 30%;
     height: 35px;
-    border-radius: 10px;
-    font-family: Arial;
-    background-color: #E12424;
+    border-radius: 5px;
+    background-color: #722F37;
     color: white;
     border: none;
+    text-align:center;
+
 }
 
-#BtnAgregarIn button i{
-    text-align: center;
-}
+
 
 #BtnAgregarIn{
     display: flex;
     justify-content: center;
-    text-align: center;
 }
 
 .btninsumos{
@@ -172,6 +202,14 @@ input{
     justify-content: space-around;
     margin: 6% 20% 20%;
     height: 40px;
+}
+
+.contenido2{
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #f8f8f8;
 }
 
 /*Estilos para la ventana emergente*/
@@ -211,6 +249,140 @@ input{
 #searchInput{
     border-radius: 20px;
     width: 80%;
+}
+
+@media (max-width: 740px){
+    .barraLateral{
+        display: none;
+    }
+
+    .botones .boton{
+        display: none; /* Oculta el botón con la clase "botones" */
+    }
+
+    .barraPrincipal{
+        width: 358px;
+    }
+
+    .contenedor .contenido #titulo{
+        display: flex;
+        justify-content: center;
+        margin-top: -18px;
+    }
+
+    .tabla{
+        display: none;
+    }
+    
+    .Fecha{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    .Fecha label{
+        font-size: 13px;
+    }
+    .Fecha input{
+        width: 110px;
+    }
+
+    .Fecha .Botones1{
+        display: flex;
+        margin-right: 20px;
+        align-items: end;
+    }
+
+    .Fecha .Botones1 button{
+        background-color: #8a0000;
+        border: none;
+        color: #ddd; border-radius: 10px;
+        width: 60px;
+        height: 30px;
+        
+    }
+
+    .tabla2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tabla2 #tituloDatos{
+        color: #6d6d6d;
+        margin-top: 40px;
+    }
+
+    .tabla2 .tabla1{
+        margin-top: 10px;
+        border: 1px solid #6d6d6d;
+        border-radius: 10px;
+        margin-right: 20px;
+        padding: 10px;
+    }
+
+    #tabla3 thead{
+        text-align: center;
+    }
+    
+
+    #tabla3 tbody{
+        text-align: center;
+    }
+
+    #tabla3 tbody td{
+        padding: 2px;
+    }
+
+    .Botones{
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+   #perfil{
+    margin-top: 50px;
+    display: flex;
+   }
+
+   #perfil #usuarioRegistrado{
+    margin-left: 10px;
+    margin-top: 7px;
+   }
+
+    #clock{
+        margin-left: 70px;
+    }
+    #clock a{
+        color:#722F37;
+    }
+    #clock a:hover{
+        color: #E12424;
+    }
+
+    
+}
+
+@media (min-width: 768px) {
+    .Fecha{
+        display: none;
+    }
+
+    .tabla2{
+        display: none;
+    }
+
+    .Botones{
+        display: none;
+    }
+
+    #perfil{
+        display: none;
+    }
+}
+
+@media (min-width: 780px) {
+    .tabla-2 {
+        display: none; /* Oculta el contenedor con la clase "tabla-2" */
+    }
 }
 
 

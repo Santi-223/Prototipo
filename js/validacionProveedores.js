@@ -1,12 +1,13 @@
 function validacionpro(){
-    let nombre= document.getElementById('nombrepro').value;
-    let direccion= document.getElementById('dirpro').value;
-    let telefono= document.getElementById('telepro').value;
+    let id= document.getElementById('id_proveedor').value;
+    let nombre= document.getElementById('nombre_proveedor').value;
+    let direccion= document.getElementById('direccion_proveedor').value;
+    let telefono= document.getElementById('telefono_proveedor').value;
     
     let caracteres = /^[a-zA-Z0-9_@.-ñÑ]+$/;
     
 
- if (nombre==="" || direccion==="" || telefono==="") {
+ if (nombre==="" || direccion==="" || telefono==="" || id==="") {
 
     Swal.fire({
         icon: 'error',
@@ -57,14 +58,15 @@ function validacionpro(){
 
 
 function validacionacpro(){
-    let nombreac= document.getElementById('nombreacpro').value;
-    let direccionac= document.getElementById('diracpro').value;
-    let telefonoac= document.getElementById('teleacpro').value;
+    let id_actu= document.getElementById('id_proveedor_actu').value;
+    let nombre_actu= document.getElementById('nombre_proveedor_actu').value;
+    let direccion_actu= document.getElementById('direccion_proveedor_actu').value;
+    let telefono_actu= document.getElementById('telefono_proveedor_actu').value;
     
     let caracteres = /^[a-zA-Z0-9_@.-ñÑ]+$/;
     
 
- if (nombreac==="" || direccionac==="" || telefonoac==="") {
+ if (nombre_actu==="" || direccion_actu==="" || telefono_actu==="" || id_actu==="") {
 
     Swal.fire({
         icon: 'error',
@@ -75,7 +77,7 @@ function validacionacpro(){
 
     
  } 
- else if (!caracteres.test(nombreac)){
+ else if (!caracteres.test(nombre_actu)){
 
     Swal.fire({
         icon: 'error',

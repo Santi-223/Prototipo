@@ -1,12 +1,14 @@
 function validacionprod(){
-    let nombre= document.getElementById('nombreprod').value;
-    let descripcion= document.getElementById('descprod').value;
-    let precio= document.getElementById('precioprod').value;
-    
+    let id= document.getElementById('id_producto').value;
+    let nombre= document.getElementById('nombre_producto').value;
+    let descripcion= document.getElementById('descripcion_producto').value;
+    let precio= document.getElementById('precio_producto').value;
     let caracteres = /^[a-zA-Z0-9_@.-ñÑ]+$/;
+
+    let selectElement = document.getElementById('categoria_producto').value;
     
 
- if (nombre==="" || descripcion==="" || precio==="") {
+ if (nombre==="" || precio==="" || id==="") {
 
     Swal.fire({
         icon: 'error',
@@ -38,7 +40,16 @@ function validacionprod(){
         
     });
 
- } else {
+ }
+ else if (selectElement == 0){
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, elija una categoría.',
+        timer: 3000
+    });
+}
+ else{
     Swal.fire({
         icon: 'success',
         title: 'Producto registrado con éxito',
@@ -47,24 +58,27 @@ function validacionprod(){
         
         
     }).then(() => {
-
+    
         window.location.href = 'gestionProductos.html'; 
     });
     ;
- } 
+ }
+ 
 
 }
 
 
 function validacionacprod(){
-    let nombreac= document.getElementById('nombreacprod').value;
-    let direccionac= document.getElementById('descacprod').value;
-    let telefonoac= document.getElementById('precioacprod').value;
-    
+    let id_actu= document.getElementById('id_producto_actu').value;
+    let nombre_actu= document.getElementById('nombre_producto_actu').value;
+    let descripcion_actu= document.getElementById('descripcion_producto_actu').value;
+    let precio_actu= document.getElementById('precio_producto_actu').value;
     let caracteres = /^[a-zA-Z0-9_@.-ñÑ]+$/;
     
+    let selectElement = document.getElementById('categoria_producto').value;
 
- if (nombreac==="" || direccionac==="" || telefonoac==="") {
+
+ if (nombre_actu==="" || descripcion_actu==="" || precio_actu==="" || id_actu==="") {
 
     Swal.fire({
         icon: 'error',
@@ -75,7 +89,7 @@ function validacionacprod(){
 
     
  } 
- else if (!caracteres.test(nombreac)){
+ else if (!caracteres.test(nombre_actu)){
 
     Swal.fire({
         icon: 'error',
@@ -86,6 +100,15 @@ function validacionacprod(){
     });
 
  }
+ else if (selectElement == 0){
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, elija una categoría.',
+        timer: 3000
+    });
+}
+
  else {
     Swal.fire({
         icon: 'success',
@@ -112,3 +135,11 @@ function cargarImagen(){
 
     document.getElementById('imagen_i').src = src
 }
+
+// Obtén una referencia al elemento <select> y al botón
+
+
+    const selectedIndex = selectElement.selectedIndex;
+    
+   
+    

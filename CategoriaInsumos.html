@@ -59,7 +59,6 @@
                     </p>
                     <ul class="options">
                         <li onclick="window.location.href='gestionUsuario.html'">Usuarios</li>
-                        <li onclick="window.location.href='accso.html'">Acceso</li>
                     </ul>
                 </div>
                 <div class="module">
@@ -118,35 +117,39 @@
                         <tr>
                             <th><i class="fa-solid fa-key iconosRojos"></i> ID</th>
                             <th><i class="fa-solid fa-font iconosRojos"></i> Nombre</th>
+                            <th><i class="fa-solid fa-list-check iconosRojos"></i> Estado</th>
                             <th><i class="fa-solid fa-gear iconosRojos"></i>Funciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Categoría A</td>
+                            <td>Bebidas</td>
+                            <td class="estado">Habilitado</td>
                             <td>
                                 <i class="fa-solid fa-pen-to-square iconosRojos"
                                     onclick="window.location.href='ActualizarCategoriaInsumos.html'"></i>
-                                <i class="fas fa-toggle-on toggle-icon"></i>
+                                <i class="fas fa-toggle-on toggle-icon" onclick="cambiarEstado(this)"></i>
                             </td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>Categoría B</td>
+                            <td>Granos</td>
+                            <td class="estado">Habilitado</td>
                             <td>
                                 <i class="fa-solid fa-pen-to-square iconosRojos"
                                     onclick="window.location.href='ActualizarCategoriaInsumos.html'"></i>
-                                <i class="fas fa-toggle-on toggle-icon"></i>
+                                <i class="fas fa-toggle-on toggle-icon" onclick="cambiarEstado(this)"></i>
                             </td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>Categoría C</td>
+                            <td>salsas</td>
+                            <td class="estado">Habilitado</td>
                             <td>
                                 <i class="fa-solid fa-pen-to-square iconosRojos"
                                     onclick="window.location.href='ActualizarCategoriaInsumos.html'"></i>
-                                <i class="fa-solid fa-toggle-on toggle-icon"></i>
+                                <i class="fa-solid fa-toggle-on toggle-icon" onclick="cambiarEstado(this)"></i>
                             </td>
                         </tr>
 
@@ -175,6 +178,8 @@
             $('table.display').DataTable();
         });-->
         </script>
+
+        
         <script src="js/Menu.js"></script>
         <script type="text/javascript" src="js/dataTable.js"></script>
         <script src="js/gestionCategoriaInsumos.js"></script>

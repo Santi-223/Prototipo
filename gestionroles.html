@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/Menu.css">
     <link rel="stylesheet" href="css/dataTable.css" />
     <link rel="stylesheet" href="css/gestionDeRoles.css">
+    
     <!-- Incluye la biblioteca de Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Incluye la biblioteca de Bootstrap Icons -->
@@ -18,9 +19,10 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body onload="listarDatos()">
+<body onload="">
     <div class="barraPrincipal">
         <div class="contenedor_1">
 
@@ -116,7 +118,7 @@
                     </thead>
                     <tbody id="contenidotabla">
                         <tr>
-                            <td>80001</td>
+                            <td>80000</td>
                             <td>Administrador</td>
                             <td>Se encarga de controlar la empresa</td>
                             <td>Ventas, Compras, Usuario</td>
@@ -126,6 +128,28 @@
 
                             </td>
                         </tr>
+                        <tr>
+                          <td>80001</td>
+                          <td>Mesero</td>
+                          <td>Se encarga de atender a los clientes</td>
+                          <td>Usuario</td>
+                          <td>
+                              <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='ActualizarRoles.html'"></i>
+                              <i class="fas fa-toggle-on toggle-icon "></i>
+
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>80002</td>
+                        <td>Cajero</td>
+                        <td>Se encarga de controlar las ventas</td>
+                        <td>Ventas</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='ActualizarRoles.html'"></i>
+                            <i class="fas fa-toggle-on toggle-icon "></i>
+
+                        </td>
+                    </tr>
 
                         <!-- Agregar más filas según sea necesario -->
                     </tbody>

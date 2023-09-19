@@ -39,7 +39,7 @@ if (correo==="" || contrasena==="") {
         
     }).then(() => {
 
-        window.location.href = 'inicio.html'; // Cambia 'otra_pagina.html' por la URL de la página a la que deseas redirigir al usuario.
+        window.location.href = 'Inicio.html'; // Cambia 'otra_pagina.html' por la URL de la página a la que deseas redirigir al usuario.
     });
     ;
 } else if (correo==="arley@gmail.com" && contrasena!="123"){
