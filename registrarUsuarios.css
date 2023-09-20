@@ -95,25 +95,3 @@
 .contIzquierdaAbajo{
     margin-top: -35px;
 }
-
-.invalid{
-  border:  1px solid #E12424;
-  box-shadow: 0 0 1px red;
-  outline: none;
- }
- .error{
-   color: #E12424;
-   display: block;
-   font-size: 12px;
- 
- }
-
- label {
-  display: block; /* Hace que el label sea un elemento en bloque para que aparezca por encima del input */
-  margin-bottom: 10px; /* Agrega un margen inferior para separar el label del input */
-}
-
-#guardar {
-  background-color: #722F37;
-  color: white;
-}

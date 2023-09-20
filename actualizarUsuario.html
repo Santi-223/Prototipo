@@ -115,39 +115,55 @@
                 </center>
                 <div id="contenedorsitos">
                     <div id="contenedorsito">
+            
                         <div class="input-container">
-                            <div id="eo">
-                                <p id="textito"><i class="fa-solid fa-id-card iconosRojos"></i> Cedula</p>
-                                <input class="input-field" type="text" placeholder="123456" disabled>
+                            <!---Crupo:nombre-->
+                            <div class="formulario__grupo" id="grupo__nombre">
+                                <label for="nombre"> <i class="fa-solid fa-font iconosRojos"></i>Nombre</label>
+                                <div class="formulario__grupo-input">
+                                    <input class="input-field" type="text" name="nombre" id="nombre">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
-    
+
+
                         <div class="input-container">
-                            <div id="eo">
-                                <p id="textito"><i class="fa-solid fa-font iconosRojos"></i> Nombre</p>
-                                <input class="input-field" type="text" placeholder="Insertar nombre">
-                            </div>
-    
-                        </div>
-                        <div class="input-container">
-                            <div id="eo">
-                                <p id="textito"><i class="fa-sharp fa-solid fa-location-dot iconosRojos"></i> Telefono</p>
-                                <input class="input-field" type="text" placeholder="3124556..">
-                            </div>
-    
-                        </div>
-                        <div class="input-container">
-                            <div id="eo">
-                                <p id="textito"> <i class="fa-solid fa-envelope iconosRojos"></i> Correo</p>
-                                <input class="input-field" type="text" placeholder="pepitoperez@gmail.co">
+                            <!---Crupo:telefono-->
+                            <div class="formulario__grupo" id="grupo__telefono">
+                                <label for="telefono"><i class="fa-solid fa-phone iconosRojos"></i> Telefono</label>
+                                <div class="formulario__grupo-input">
+                                    <input class="input-field" type="text" name="telefono" id="telefono">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
+
                         <div class="input-container">
-                            <div id="eo">
-                                <p id="textito"> <i class="fa-solid fa-envelope iconosRojos"></i> Contraseña</p>
-                                <input class="input-field" type="text" placeholder="12345">
+                            <!---Crupo:direccion-->
+                            <div class="formulario__grupo" id="grupo__direccion">
+                                <label for="direccion"><i class="fa-sharp fa-solid fa-location-dot iconosRojos"></i>
+                                    Dirección</label>
+                                <div class="formulario__grupo-input">
+                                    <input class="input-field" type="text" name="direccion" id="direccion">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
+
+
+                        <div class="input-container">
+                            <!---Crupo:correo-->
+                            <div class="formulario__grupo" id="grupo__correo">
+                                <label for="correo"><i class="fa-solid fa-envelope iconosRojos"></i>correo</label>
+                                <div class="formulario__grupo-input">
+                                    <input class="input-field" type="text" name="correo" id="correo">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="input-container">
                             <div class="eo">
                                 <p class=""><i class="fas fa-user-shield iconosRojos"></i> Rol</p>
@@ -163,24 +179,25 @@
                     ㅤ
                     <div id="cosas">
                         <center>
-                          <br>
-                          <br>
-                          <div class="input1 divImagen">
-                            <p><i class="fa-solid fa-image iconosRojos"></i> URL Imagen</p>
-                            <img id="imagen_i" src="https://tse2.mm.bing.net/th?id=OIP.U8HnwxkbTkhoZ_DTf7sCSgHaHa&pid=Api&P=0&h=180"
-                              width="200px">
                             <br>
                             <br>
-                            <input onchange="cargarImagen()" id="imagen_insumo" class="input-field2" type="text"
-                              placeholder="URL de la imagen">
-                          </div>
+                            <div class="input1 divImagen">
+                                <p><i class="fa-solid fa-image iconosRojos"></i> URL Imagen</p>
+                                <img id="imagen_i"
+                                    src="https://tse2.mm.bing.net/th?id=OIP.U8HnwxkbTkhoZ_DTf7sCSgHaHa&pid=Api&P=0&h=180"
+                                    width="200px">
+                                <br>
+                                <br>
+                                <input onchange="cargarImagen()" id="imagen_insumo" class="input-field2" type="text"
+                                    placeholder="URL de la imagen">
+                            </div>
                         </center>
                         <br>
-                      </div>
+                    </div>
                 </div>
-    
+
                 <div class="botonsito">
-                    <button class="boton boton-generar" onclick="window.location.href='gestionUsuario.html'"><i
+                    <button class="boton boton-generar" onclick="modificar()" ><i
                             class=""></i> Guardar</button>ㅤㅤㅤㅤㅤ
                     <button onclick="window.location.href='gestionUsuario.html' " class="boton botonAgregar">
                         <iclass=""></i> Cancelar
@@ -196,6 +213,9 @@
         });
     </script>
     <script src="js/Menu.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/form.js"></script>
     <script src="js/gestionDeInsumos.js"></script>
     <script type="text/javascript" src="js/dataTable.js"></script>
 

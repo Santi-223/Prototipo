@@ -167,6 +167,7 @@
                     <tr id="TStablaInsumos">
                       <th id="StablaInsumos"><i class="fa-solid fa-key iconosRojos"></i> ID</th>
                       <th id="StablaInsumos"><i class="fa-solid fa-font iconosRojos"></i> Nombre</th>
+
                       <th id="StablaInsumos"><i class="fa-solid fa-message iconosRojos"></i> Descripción</th>
                       <th id="StablaInsumos"><i class="fa-solid fa-utensils iconosRojos"></i> Categoría</th>
                       <th id="StablaInsumos"><i class="fa-solid fa-dollar-sign iconosRojos"></i> Precio producto</th>
@@ -201,7 +202,7 @@
                
                 </div>
                 <div id="BtnAgregarIn">
-                  <button id="openPopupBtn"><i>+ Productos</i></button>
+                  <button type="button" id="openPopupBtn"><i>+ Productos</i></button>
                   <div id="popup" class="contVentana">
                     <input type="text" id="searchInput" placeholder="Buscar por ID...">
                     <br>
@@ -210,6 +211,7 @@
                         <tr>
                            <th id="StablaInsumos"><i class="fa-solid fa-key iconosRojos"></i> ID</th>
                            <th id="StablaInsumos"><i class="fa-solid fa-font iconosRojos"></i> Nombre</th>
+                           <th id="StablaInsumos"><i class="fa-solid fa-cookie iconosRojos"></i> Cantidad</th>
                            <th id="StablaInsumos"><i class="fa-solid fa-message iconosRojos"></i> Descripción</th>
                            <th id="StablaInsumos"><i class="fa-solid fa-utensils iconosRojos"></i> Categoría</th>
                            <th id="StablaInsumos"><i class="fa-solid fa-dollar-sign iconosRojos"></i> Precio producto</th>
@@ -218,50 +220,55 @@
                         <tr>
                            <td>9004</td>
                            <td>Pepsi</td>
+                           <td><input id="inputemergente" type="number"></td>
                            <td>Este producto...</td>
                            <td>Bebidas</td>
                            <td>20.000</td>
-                           <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                           <td><input type="checkbox" name="seleccion" /></td>
                         </tr>
                         <tr>
                            <td>9005</td>
                            <td>Colombiana</td>
+                           <td><input id="inputemergente" type="number"></td>
                            <td>Este producto...</td>
                            <td>Bebidas</td>
                            <td>20.000</td>
-                           <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                           <td><input type="checkbox" name="seleccion" /></td>
                         </tr>
                         <tr>
                            <td>9006</td>
                            <td>Salchicha</td>
+                           <td><input id="inputemergente" type="number"></td>
                            <td>Este producto...</td>
                            <td>Carnes</td>
                            <td>42.000</td>
-                           <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                           <td><input type="checkbox" name="seleccion" /></td>
                       </tr>
                       <tr>
                        <td>9007</td>
                        <td>Carne cerdo</td>
+                       <td><input id="inputemergente" type="number"></td>
                        <td>Este producto...</td>
                        <td>Carnes</td>
                        <td>200.000</td>
-                       <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                       <td><input type="checkbox" name="seleccion" /></td>
                     </tr>
                     <tr>
                        <td>9008</td>
                        <td>Agua</td>
+                       <td><input id="inputemergente" type="number"></td>
                        <td>Este producto...</td>
                        <td>Bebidas
                        </td>
                        <td>15.000</td>
-                       <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                       <td><input type="checkbox" name="seleccion" /></td>
                     </tr>
                         <!-- Agregar más filas aquí -->
                     </table>
                     <br>
                     <br>
-                    <button  id="insertBtn">Insertar Datos</button>
-                    <button id="cancelBtn">Cancelar</button>
+                    <button type="button" id="insertBtn">Insertar Datos</button>
+                    <button type="button" id="cancelBtn">Cancelar</button>
                  </div>
                  </div>
 
@@ -318,7 +325,7 @@
                
                 </div>
                 <div id="BtnAgregarIn">
-                  <button id="openPopupBtnAAA"><i>+ Clientes</i></button>
+                  <button type="button" id="openPopupBtnAAA"><i>+ Clientes</i></button>
                   <div id="popupAAA" class="contVentana">
                     <input type="text" id="searchInput" placeholder="Buscar por ID...">
                     <br>
@@ -338,7 +345,7 @@
                             <td>5273079</td>
                             <td>crr 21 #13-12</td>
                             <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
-                            <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                            <td><input type="radio" name="seleccion" /></td>
                         </tr>
                         <tr>
                            <td>01804</td>
@@ -346,7 +353,7 @@
                            <td>5928392</td>
                            <td>crr 95 #11-15</td>
                            <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
-                           <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                           <td><input type="radio" name="seleccion" /></td>
                        </tr>
                        <tr>
                            <td>01805</td>
@@ -354,7 +361,7 @@
                            <td>5289052</td>
                            <td>crr 01 #1-10</td>
                            <td><i class="fa-solid fa-user-minus iconosRojos"></i></td>
-                           <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                           <td><input type="radio" name="seleccion" /></td>
                        </tr>
                        <tr>
                            <td>01806</td>
@@ -362,7 +369,7 @@
                            <td>5302391</td>
                            <td>crr 01 #1-10</td>
                            <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
-                           <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                           <td><input type="radio" name="seleccion" /></td>
                        </tr>
                        <tr>
                            <td>01807</td>
@@ -370,14 +377,14 @@
                            <td>5982653</td>
                            <td>cll 29 #02-25</td>
                            <td><i class="fa-solid fa-user-minus iconosRojos"></i></td>
-                           <td><input type="checkbox" name="seleccion" onchange="seleccionarFila(this)" /></td>
+                           <td><input type="radio" name="seleccion" /></td>
                        </tr>
                         <!-- Agregar más filas aquí -->
                     </table>
                     <br>
                     <br>
-                    <button  id="insertBtnAAA">Insertar Datos</button>
-                    <button id="cancelBtnAAA">Cancelar</button>
+                    <button type="button" id="insertBtnAAA">Insertar Datos</button>
+                    <button type="button" id="cancelBtnAAA">Cancelar</button>
                  </div>
                  </div>
 

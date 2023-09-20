@@ -97,29 +97,36 @@
       </div>
     </div>
     <div class="contenido">
-     <div class="container1">
-      <br>
-      <br>
-      <div class="titulo">
-        <h3>Registrar Categoria producto</h3>
-      </div>
-      <br><br>
-      <div class="contForms">
-        <div class="Derecha">
-          <div class="input1">
-            <p><i class="fa-solid fa-font iconosRojos" ></i>Insertar nombre:</p>
-            <input class="input-field2" type="text" placeholder="Agregar texto">
+      <div class="contenido2">
+        <div class="container1">
+          <br>
+          <br>
+          <br>
+          <div class="titulo">
+            <h3>Registrar Categoria producto</h3>
           </div>
-        </div>
+          <br><br>
+          <div class="contForms">
+            <div class="Derecha">
+              <div class="input1">
+                <label for="agregarNombre"><i class="fa-solid fa-font iconosRojos" ></i>Ingrese nombre</label>
+                <input class="input-field2" type="text" placeholder="Agregar texto" name="agregarNombre" id="agregarNombre">
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <center>
+            <div class="cajaBotones">
+                <button onclick="RegistProduc()" id="guardar" type="submit">Guardar</button>
+                <div class="espacioEntreBotones"></div>
+                <button id="cancelar" type="button" onclick="window.location.href='categoriaProductos.html'">Cancelar</button>
+            </div>
+        </center>
+        <br><br>
+         </div>
       </div>
-      <br>
-      <br>
-      <div class="Botones">
-        <button class="boton boton-generar" type="submit" onclick="window.location.href='categoriaProductos.html'">Guardar</button>
-        <button class="boton botonAgregar" type="button" onclick="window.location.href='categoriaProductos.html'">Cancelar</button>
-      </div>
-
-     </div>
+     
     </div>
     </div>
   </div>
@@ -144,8 +151,11 @@
 </script>
 <script src="js/Menu.js"></script>
 <script src="js/gestionDeInsumos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/form.js"></script>
+<script src="js/formRegCatProdc.js"></script>
 <script type="text/javascript" src="js/dataTable.js"></script>
-
+<script src="js/formRegCatProdc.js"></script>
 </html>
 
 </body>

@@ -1,20 +1,78 @@
 .input1 input{
-    width: 300px;
-    height: 50px;
+  width: 300px;
+  height: 50px;
 }
 .Derecha{
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
- .Botones{
-    display: flex;
-    justify-content: space-around;
-    margin: 9% 28% 28%;
-    
- }
- 
+
+
+
 .titulo{
-    text-align: center;
-    color: #000;
+  text-align: center;
+  color: #000;
+}
+
+
+.invalid{
+  border:  1px solid #E12424;
+  box-shadow: 0 0 1px red;
+  outline: none;
+ }
+ .error{
+   color: #E12424;
+   display: block;
+   font-size: 15px;
+ 
+ }
+ .label {
+  display: block; /* Hace que el label sea un elemento en bloque para que aparezca por encima del input */
+  margin-bottom: 5px; /* Agrega un margen inferior para separar el label del input */
+}
+
+.input1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contenido2{
+  border-radius: 3px;
+  border: 1px solid #b9b9b9;
+  margin-left: 50px;
+  margin-right: 50%;
+  height: 600px;
+  
+  background-color: #f8f8f8;
+  
+}
+
+.cajaBotones {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cajaBotones button {
+  padding: 10px 40px;
+  /* Ajusta el padding para hacer los botones más largos */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20%;
+  /* Ajusta el ancho de los botones */
+}
+
+#guardar {
+  background-color: #722F37;
+  color: white;
+}
+
+#cancelar {
+  background-color: #E12424;
+  color: white;
 }
