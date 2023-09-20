@@ -15,7 +15,6 @@ const agregar = () => {
   if (cedula == "" || nombre == "" || telefono == "" || direccion == "" || correo == "" || contraseña == ""||rol=="") {
     Swal.fire({
       title: 'Error campos vacios',
-      text: "¡Todos los campos deben de ser diligenciados!",
       width: 600,
       padding: '3em',
       confirmButtonColor: '#722F37',
@@ -65,7 +64,6 @@ const modificar = () => {
   if (nombre == "" || telefono == "" || direccion == "" || correo == "") {
     Swal.fire({
       title: 'Error campos vacios',
-      text: "¡Todos los campos deben de ser diligenciados!",
       width: 600,
       padding: '3em',
       confirmButtonColor: '#722F37',
@@ -114,7 +112,6 @@ const registroCom = () => {
   if (nombreCompra == "" || precioCompra == "" || idCompra == ""||fechaCompra=="") {
     Swal.fire({
       title: 'Error campos vacios',
-      text: "¡Todos los campos deben de ser diligenciados!",
       width: 600,
       padding: '3em',
       confirmButtonColor: '#722F37',

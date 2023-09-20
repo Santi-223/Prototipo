@@ -3,25 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Menu.css">
-    <link rel="stylesheet" href="css/dataTable.css" />
-    <link rel="stylesheet" href="css/EstilosJuanda.css">
-    <link rel="stylesheet" href="css/registroProveedor.css">
-
+    <link rel="stylesheet" href="css/gestionDeClientes.css">
     <!-- Incluye la biblioteca de Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Incluye la biblioteca de Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>LuchoSoft</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 </head>
 
 <body>
@@ -50,6 +47,7 @@
                   <!-- Flecha hacia abajo --></p>
                 <ul class="options">
                   <li onclick="window.location.href='gestionroles.html'">Roles</li>
+                  
                 </ul>
               </div>
               <div class="module">
@@ -57,6 +55,7 @@
                 </p>
                 <ul class="options">
                   <li onclick="window.location.href='gestionUsuario.html'">Usuarios</li>
+                  <li onclick="window.location.href='accso.html'">Acceso</li>
                 </ul>
               </div>
               <div class="module">
@@ -95,79 +94,53 @@
       
       
             </div>
-        </div>
+          </div>
         <div class="contenido">
           <div class="contenido2">
             <br>
             <center>
-                <div id="titulo">
-                    <h1>Registro de proveedores</h1>
-                </div>
-            </center>
-  <p>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+              <h3>Agregar Cliente</h3>
+          </center>
+          <br>
+          <div class="contForms">
+              <div class="input1">
+                  <p class=""><i class="fa-solid fa-key iconosRojos"></i> ID del cliente</p>
+                  <input id="id_cliente" class="input-field" type="number" placeholder="Ingrese el id">
+              </div>
+              <br>
+              <div class="input1">
+                  <p><i class="fa-solid fa-font iconosRojos"></i> Nombre del cliente</p>
+                  <input id="nombre_cliente" class="input-field" type="text" placeholder="Ingrese el nombre">
+              </div>
+              <br>
+              <div class="input1">
+                  <p><i class="fa-solid fa-phone iconosRojos"></i> Telefono del cliente</p>
+                  <input id="telefono_cliente" class="input-field" type="text" placeholder="Ingrese el telefono">
+              </div>
+              <br>
+              <div class="input1">
+                  <p><i class="fa-sharp fa-solid fa-location-dot iconosRojos"></i> Dirección del cliente</p>
+                  <input id="direccion_cliente" class="input-field" type="text" placeholder="Ingrese la dirección">
+              </div>
+              <br>
+          </div>
 
-    <div id="contenedorsito" class="">
-        <div class="input-container">
-            <div id="eo">
-                <p id="textito"> <span class="icon key-icon iconosRojos"></span>ID</p>
-           
-            <input id="id_proveedor" class="input-field" type="text" placeholder="Ingrese el id" >
-            </div>
-            
+          <center>
+              <div class="cajaBotones">
+                  <button onclick="validarCamposAgregar()" id="guardar" type="submit">Guardar</button>
+                  <div class="espacioEntreBotones"></div>
+                  <button id="cancelar" type="button" onclick="window.location.href='CLientes.html'">Cancelar</button>
+              </div>
+          </center>
+          <br>
+          </div>
+          
         </div>
-
-        <div class="input-container">
-            <div id="eo">
-                <p id="textito"> <span class="fa-solid fa-font iconosRojos"></span> Nombre</p>
-           
-            <input id="nombre_proveedor" class="input-field" type="text" placeholder="Ingrese el nombre">
-            </div>
-            
-        </div>
-        <div class="input-container">
-            <div id="eo">
-                <p id="textito"> <span class="fa-sharp fa-solid fa-location-dot iconosRojos"></span>   Dirección</p>
-           
-            <input id="direccion_proveedor" class="input-field" type="text" placeholder="Ingrese la dirección">
-            </div>
-            
-        </div>
-        <div class="input-container">
-            <div id="eo">
-                <p id="textito"> <span class="fa-solid fa-phone iconosRojos"></span>  Teléfono</p>
-           
-            <input id="telefono_proveedor" class="input-field" type="text" placeholder="Ingrese el telefono">
-            </div>
-            
-        </div>
-
-       
-    </div>
-    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-    <div  class="cajaBotones">
-      <br>
-      ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-      <button id="validarBtn" class="boton boton-generar" onclick="validacionpro()"><i class=""></i>Guardar</button>ㅤㅤㅤㅤㅤ
-      <button id="cancelar" class="boton botonAgregar" onclick="window.location.href='gestionProveedores.html'"><i class=""></i>Cancelar</button>
-    </div>
-    <br>
-
-   
-
-               
-</div>
-        </div>
-
     </div>
 
-    <script>
-        $(document).ready(function () {
-            $('table.display').DataTable();
-        });
-    </script>
+
+    <script src="js/gestionDeClientes.js"></script>
     <script src="js/Menu.js"></script>
-    <script src="js/validacionProveedores.js"></script>
-    <script type="text/javascript" src="js/dataTable.js"></script>
 
 </html>
 

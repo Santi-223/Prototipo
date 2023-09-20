@@ -115,7 +115,7 @@
         <div class="input-container">
             <div id="kaka">
                 <p id="skad"><span class="icon key-icon iconosRojos"></span>ID del Pedido</p>
-                <input id="idpedido" class="input-field" type="number" placeholder="ID de Pedido" style="max-width: 500px;">
+                <input id="idpedido" class="input-field" type="number" placeholder="5000" style="max-width: 500px;" readonly>
 
            </div>
 
@@ -181,28 +181,15 @@
                       <td>Granos</td>
                       <td>100.000</td>
                     </tr>
-                    <tr id="TSDatos">
-                      <td>9002</td>
-                      <td>Pollo</td>
-                      <td>Este producto...</td>
-                      <td>Carnes</td>
-                      <td>35.000</td>
-                      </tr>
-                      <tr id="TSDatos">
-                       <td>9003</td>
-                       <td>Coca-Cola</td>
-                       <td>Este producto...</td>
-                       <td>Bebidas</td>
-                       <td>20.000</td>
-                       </tr>
+
                   </tbody>
                 </table>
-                
+                <button type="button" id="openPopupBtn"><i>+ Productos</i></button>
                </div>
                
                 </div>
                 <div id="BtnAgregarIn">
-                  <button type="button" id="openPopupBtn"><i>+ Productos</i></button>
+
                   <div id="popup" class="contVentana">
                     <input type="text" id="searchInput" placeholder="Buscar por ID...">
                     <br>
@@ -224,16 +211,16 @@
                            <td>Este producto...</td>
                            <td>Bebidas</td>
                            <td>20.000</td>
-                           <td><input type="checkbox" name="seleccion" /></td>
+                           <td><input type="checkbox" name="opcion1"/></td>
                         </tr>
                         <tr>
                            <td>9005</td>
                            <td>Colombiana</td>
-                           <td><input id="inputemergente" type="number"></td>
+                           <td><input id="inputemergente" type="number" ></td>
                            <td>Este producto...</td>
                            <td>Bebidas</td>
                            <td>20.000</td>
-                           <td><input type="checkbox" name="seleccion" /></td>
+                           <td><input type="checkbox" name="opcion1" /></td>
                         </tr>
                         <tr>
                            <td>9006</td>
@@ -242,7 +229,7 @@
                            <td>Este producto...</td>
                            <td>Carnes</td>
                            <td>42.000</td>
-                           <td><input type="checkbox" name="seleccion" /></td>
+                           <td><input type="checkbox" name="opcion1" /></td>
                       </tr>
                       <tr>
                        <td>9007</td>
@@ -251,7 +238,7 @@
                        <td>Este producto...</td>
                        <td>Carnes</td>
                        <td>200.000</td>
-                       <td><input type="checkbox" name="seleccion" /></td>
+                       <td><input type="checkbox" name="opcion1" /></td>
                     </tr>
                     <tr>
                        <td>9008</td>
@@ -261,14 +248,14 @@
                        <td>Bebidas
                        </td>
                        <td>15.000</td>
-                       <td><input type="checkbox" name="seleccion" /></td>
+                       <td><input type="checkbox" name="opcion1" /></td>
                     </tr>
                         <!-- Agregar más filas aquí -->
                     </table>
                     <br>
                     <br>
-                    <button type="button" id="insertBtn">Insertar Datos</button>
-                    <button type="button" id="cancelBtn">Cancelar</button>
+                    <button  type="button" id="insertBtn">Insertar Datos</button>
+                    <button onclick="CancelarV()" type="button" id="cancelBtn">Cancelar</button>
                  </div>
                  </div>
 
@@ -281,7 +268,7 @@
                 <table id="TablaOrdenProduccion">
                   <thead>
                     <tr class="trclass">
-                      <th colspan="5"><i>Clientes agregados</i></th>
+                      <th colspan="5"><i>Cliente agregado</i></th>
                     </tr>
                     <tr id="TStablaInsumos">
                        <th><i class="fa-solid fa-key iconosRojos"></i> ID</th>
@@ -301,35 +288,25 @@
                            <i class="fa-solid fa-user-plus iClienteFrecuente"></i>
                        </td>
                     </tr>
-                    <tr id="TSDatos">
-                       <td>01801</td>
-                       <td>Santiago Berrio</td>
-                       <td>33232</td>
-                       <td>crr 12 #14-12</td>
-                       <td>
-                           <i class="fa-solid fa-user-plus iClienteFrecuente"></i>
-                       </td>
-                       </tr>
-                       <tr id="TSDatos">
-                           <td>01802</td>
-                           <td>Arley</td>
-                           <td>349231</td>
-                           <td>crr 81 #51-12</td>
-                           <td>
-                               <i class="fa-solid fa-user-plus iClienteFrecuente"></i>
-                           </tr>
+
                   </tbody>
+                  
                 </table>
+                <button type="button" id="openPopupBtnAAA"><i>+ Cliente</i></button>
                 
                </div>
                
                 </div>
+
                 <div id="BtnAgregarIn">
-                  <button type="button" id="openPopupBtnAAA"><i>+ Clientes</i></button>
+
                   <div id="popupAAA" class="contVentana">
+                    
                     <input type="text" id="searchInput" placeholder="Buscar por ID...">
+                    
                     <br>
                     <br>
+                    
                     <table id="dataTable">
                         <tr>
                            <th><i class="fa-solid fa-key iconosRojos"></i> ID</th>
@@ -345,7 +322,7 @@
                             <td>5273079</td>
                             <td>crr 21 #13-12</td>
                             <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
-                            <td><input type="radio" name="seleccion" /></td>
+                            <td><input type="radio" name="opcion" id="radio" /></td>
                         </tr>
                         <tr>
                            <td>01804</td>
@@ -353,7 +330,7 @@
                            <td>5928392</td>
                            <td>crr 95 #11-15</td>
                            <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
-                           <td><input type="radio" name="seleccion" /></td>
+                           <td><input type="radio" name="opcion" id="radio"  /></td>
                        </tr>
                        <tr>
                            <td>01805</td>
@@ -361,7 +338,7 @@
                            <td>5289052</td>
                            <td>crr 01 #1-10</td>
                            <td><i class="fa-solid fa-user-minus iconosRojos"></i></td>
-                           <td><input type="radio" name="seleccion" /></td>
+                           <td><input type="radio" name="opcion" id="radio" /></td>
                        </tr>
                        <tr>
                            <td>01806</td>
@@ -369,7 +346,7 @@
                            <td>5302391</td>
                            <td>crr 01 #1-10</td>
                            <td><i class="fa-solid fa-user-plus iconosRojos"></i></td>
-                           <td><input type="radio" name="seleccion" /></td>
+                           <td><input type="radio" name="opcion" /></td>
                        </tr>
                        <tr>
                            <td>01807</td>
@@ -377,14 +354,14 @@
                            <td>5982653</td>
                            <td>cll 29 #02-25</td>
                            <td><i class="fa-solid fa-user-minus iconosRojos"></i></td>
-                           <td><input type="radio" name="seleccion" /></td>
+                           <td><input type="radio" name="opcion" /></td>
                        </tr>
                         <!-- Agregar más filas aquí -->
                     </table>
                     <br>
                     <br>
-                    <button type="button" id="insertBtnAAA">Insertar Datos</button>
-                    <button type="button" id="cancelBtnAAA">Cancelar</button>
+                    <button  type="button" id="insertBtnAAA">Insertar Datos</button>
+                    <button onclick="CancelarV()" type="button" id="cancelBtnAAA">Cancelar</button>
                  </div>
                  </div>
 
@@ -396,7 +373,7 @@
     
     <center>
       <div class="cajaBotones">
-      <button onclick="actualizar()" id="cancelar" type="button">Guardar</button>
+      <button onclick="registrar()" id="cancelar" type="button">Guardar</button>
       <div class="espacioEntreBotones"></div>
       <button id="guardar" type="button" onclick="window.location.href='pedidos.html'">Cancelar</button>
      </div>

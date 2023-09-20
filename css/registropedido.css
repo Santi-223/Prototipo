@@ -218,7 +218,7 @@ margin-right: 60px;
 }
 
 #tablaDat thead th {
-  background-color: #b4b4b4;
+  background-color: #c44646;
 
   text-align: left;
   width: 10px;
@@ -367,26 +367,26 @@ text-align: center;
 }
 
 #openPopupBtn{
-width: 72%;
-height: 35px;
-border-radius: 10px;
-font-family: Arial;
-background-color: #E12424;
-color: white;
-border: none;
-margin-top: 10px;
-}
+  width: 100%;
+  height: 35px;
+  border-radius: 0px 0px 10px 10px;
+  font-family: Arial;
+  background-color: #722F37;
+  color: white;
+  border: none;
+  margin-bottom: 5px;
+  }
 
 
 #openPopupBtnAAA{
-  width: 72%;
+  width: 100%;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
   font-family: Arial;
-  background-color: #E12424;
+  background-color: #722F37;
   color: white;
   border: none;
-  margin-top: 10px;
+  margin-bottom: 5px;
   }
 
 
@@ -411,9 +411,10 @@ position: fixed;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-background-color: rgb(216, 216, 216);
+background-color: rgb(236, 234, 234);
 padding: 20px;
 border: 1px solid black;
+border-radius: 10px;
 text-align: center;
 margin-left: 90px;
 }
@@ -422,10 +423,12 @@ margin-left: 90px;
 #dataTable{
 border: 1px solid black;
 width: 800px;
+background-color: #f0e8e8;
 }
 
 #dataTable tr th{
 text-align: center;
+background-color: #ddd;
 }
 
 .gris {
@@ -480,7 +483,7 @@ margin-left: 50px;
 #insertBtn {
 width: 32%;
 height: 35px;
-border-radius: 10px;
+border-radius: 5px;
 font-family: Arial;
 background-color: #722F37;
 color: white;
@@ -491,7 +494,7 @@ margin-top: 10px;
 #cancelBtn {
   width: 32%;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: Arial;
   background-color: #E12424;
   color: white;
@@ -503,7 +506,7 @@ margin-top: 10px;
   #insertBtnAAA {
     width: 32%;
     height: 35px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: Arial;
     background-color:#722F37;
     color: white;
@@ -514,7 +517,7 @@ margin-top: 10px;
     #cancelBtnAAA {
       width: 32%;
       height: 35px;
-      border-radius: 10px;
+      border-radius: 5px;
       font-family: Arial;
       background-color: #E12424;
       color: white;

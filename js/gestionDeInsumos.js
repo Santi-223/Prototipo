@@ -19,6 +19,7 @@ const listarInsumos = async (busqueda) => {
     let body = document.getElementById('contenidoInsumos')
 
     // Si se proporciona un parámetro de búsqueda, construye la URL de la API con ese parámetro
+
     let urlAPI = url;
     if (busqueda) {
         alert(busqueda)
@@ -63,7 +64,7 @@ const listarInsumos = async (busqueda) => {
                         `<td>
                             <i onclick="window.location.href='ModificarInsumo.html?id_insumo=${insumo.id_insumo}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
                             <i onclick="cambiarEstadoInsumo('${insumo.id_insumo}', '${estado_nuevo}')" class="${estado}"></i>
-
+                            <i onclick="eliminarInsumo('${insumo.id_insumo}')" class="fas fa-trash iconosRojos"></i>
                         </td>`+
                         `</tr>`
                 })
@@ -281,4 +282,45 @@ function cargarImagen(){
     }
 
     document.getElementById('imagen_i').src = src
+}
+
+const eliminarInsumo = async (id_insumo) => {
+
+    fetch(`${url}?id_insumo=${id_insumo}`, {
+        method: 'DELETE',
+        mode: 'cors',
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+        .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
+        .then(json => {
+            //alert(json.msg)//Mensaje que retorna la API
+            console.log(json)
+            if (json.msg=="La eliminación se efectuó exitosamente") {
+                Swal.fire({
+                    title: json.msg,
+                    icon: 'success',
+                    showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // El usuario hizo clic en "OK"
+                        window.location.href = 'Insumos.html'; // Redireccionar después del clic en OK
+                    }
+                });
+            }else{
+                Swal.fire({
+                    title: json.msg,
+                    icon: 'error',
+                    showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // El usuario hizo clic en "OK"
+                        window.location.href = 'Insumos.html'; // Redireccionar después del clic en OK
+                    }
+                });
+            }
+        })
+
+
 }

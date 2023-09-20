@@ -7,24 +7,22 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Menu.css">
     <link rel="stylesheet" href="css/dataTable.css" />
-    <link rel="stylesheet" href="css/EstilosJuanda.css">
-    <link rel="stylesheet" href="css/registroProveedor.css">
-
+    <link rel="stylesheet" href="css/gestionDeRoles.css">
+    
     <!-- Incluye la biblioteca de Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Incluye la biblioteca de Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>LuchoSoft</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 </head>
 
-<body>
+<body onload="">
     <div class="barraPrincipal">
         <div class="contenedor_1">
 
@@ -95,78 +93,92 @@
       
       
             </div>
-        </div>
+          </div>
         <div class="contenido">
-          <div class="contenido2">
-            <br>
             <center>
                 <div id="titulo">
-                    <h1>Registro de proveedores</h1>
+                    <h1>Gestión de roles</h1>
                 </div>
             </center>
-  <p>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+            <div class="botones">
+                <button class="botonx" onclick="window.location.href='registroRoles.html'"><i class="fa-solid fa-plus"></i> Agregar</button>
 
-    <div id="contenedorsito" class="">
-        <div class="input-container">
-            <div id="eo">
-                <p id="textito"> <span class="icon key-icon iconosRojos"></span>ID</p>
-           
-            <input id="id_proveedor" class="input-field" type="text" placeholder="Ingrese el id" >
             </div>
-            
-        </div>
+            <div class="tabla">
+                
+                <table id="tablaInsumos" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th><i class="fa-solid fa-key iconosRojos"></i> ID</th>
+                            <th><i class="fa-solid fa-font iconosRojos"></i> Nombre</th>
+                            <th><i class="fa-solid fa-message iconosRojos"></i> Descripción</th>
+                            <th><i class="fa-solid fa-check iconosRojos"></i> Permisos</th>
+                            <th><i class="fa-solid fa-gear iconosRojos"></i> Funciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenidotabla">
+                        <tr>
+                            <td>80000</td>
+                            <td>Administrador</td>
+                            <td>Se encarga de controlar la empresa</td>
+                            <td>Ventas, Compras, Usuario</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='ActualizarRoles.html'"></i>
+                                <i class="fas fa-toggle-on toggle-icon "></i>
 
-        <div class="input-container">
-            <div id="eo">
-                <p id="textito"> <span class="fa-solid fa-font iconosRojos"></span> Nombre</p>
-           
-            <input id="nombre_proveedor" class="input-field" type="text" placeholder="Ingrese el nombre">
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>80001</td>
+                          <td>Mesero</td>
+                          <td>Se encarga de atender a los clientes</td>
+                          <td>Usuario</td>
+                          <td>
+                              <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='ActualizarRoles.html'"></i>
+                              <i class="fas fa-toggle-on toggle-icon "></i>
+
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>80002</td>
+                        <td>Cajero</td>
+                        <td>Se encarga de controlar las ventas</td>
+                        <td>Ventas</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='ActualizarRoles.html'"></i>
+                            <i class="fas fa-toggle-on toggle-icon "></i>
+
+                        </td>
+                    </tr>
+
+                        <!-- Agregar más filas según sea necesario -->
+                    </tbody>
+                </table>
+
             </div>
-            
         </div>
-        <div class="input-container">
-            <div id="eo">
-                <p id="textito"> <span class="fa-sharp fa-solid fa-location-dot iconosRojos"></span>   Dirección</p>
-           
-            <input id="direccion_proveedor" class="input-field" type="text" placeholder="Ingrese la dirección">
-            </div>
-            
-        </div>
-        <div class="input-container">
-            <div id="eo">
-                <p id="textito"> <span class="fa-solid fa-phone iconosRojos"></span>  Teléfono</p>
-           
-            <input id="telefono_proveedor" class="input-field" type="text" placeholder="Ingrese el telefono">
-            </div>
-            
-        </div>
-
-       
-    </div>
-    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-    <div  class="cajaBotones">
-      <br>
-      ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-      <button id="validarBtn" class="boton boton-generar" onclick="validacionpro()"><i class=""></i>Guardar</button>ㅤㅤㅤㅤㅤ
-      <button id="cancelar" class="boton botonAgregar" onclick="window.location.href='gestionProveedores.html'"><i class=""></i>Cancelar</button>
-    </div>
-    <br>
-
-   
-
-               
-</div>
-        </div>
-
     </div>
 
     <script>
         $(document).ready(function () {
-            $('table.display').DataTable();
+            var table = $('table.display').DataTable({
+                lengthMenu: [5], // Establece el número de registros a mostrar en el dropdown
+                pageLength: 5, // Muestra solo 5 registros por página
+                paging: true, // Activa la paginación
+                searching: true, // Activa la búsqueda
+                ordering: true, // Activa la ordenación
+                info: true, // Muestra la información de paginación
+            });
+
+            $('.dataTables_length').hide();
+            $('.dataTables_info').hide();
+            $('.dataTables_filter').addClass('pull-left');
+
         });
+
     </script>
     <script src="js/Menu.js"></script>
-    <script src="js/validacionProveedores.js"></script>
+    <script src="js/gestionroles.js"></script>
     <script type="text/javascript" src="js/dataTable.js"></script>
 
 </html>

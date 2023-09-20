@@ -85,6 +85,7 @@ const listarClientes = async (busqueda) => {
                             <i onclick="window.location.href='ModificarCLiente.html?id_cliente=${cliente.id_cliente}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
                             <i onclick="cambiarEstadoCliente('${cliente.id_cliente}', '${estado_nuevo}')" class="${estado}"></i>
                             <i onclick="cambiarEstadoClienteFrecuente('${cliente.id_cliente}', '${cliente_frec_nuevo}')" class="${frecuente}"></i>
+                            <i onclick="eliminarCliente('${cliente.id_cliente}')" class="fas fa-trash iconosRojos"></i>
                         </td>`+
                         `</tr>`
                 })
@@ -328,3 +329,43 @@ function validarCamposModificar() {
     }
 }
 
+const eliminarCliente = async (id_cliente) => {
+
+    fetch(`${url}?id_cliente=${id_cliente}`, {
+        method: 'DELETE',
+        mode: 'cors',
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+        .then((resp) => resp.json()) //Obtener la respuesta y convertirla a json
+        .then(json => {
+            //alert(json.msg)//Mensaje que retorna la API
+            console.log(json)
+            if (json.msg=="La eliminación se efectuó exitosamente") {
+                Swal.fire({
+                    title: json.msg,
+                    icon: 'success',
+                    showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // El usuario hizo clic en "OK"
+                        window.location.href = 'Clientes.html'; // Redireccionar después del clic en OK
+                    }
+                });
+            }else{
+                Swal.fire({
+                    title: json.msg,
+                    icon: 'error',
+                    showCancelButton: false, // Evita que aparezca el botón "Cancelar"
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // El usuario hizo clic en "OK"
+                        window.location.href = 'Insumos.html'; // Redireccionar después del clic en OK
+                    }
+                });
+            }
+        })
+
+
+}

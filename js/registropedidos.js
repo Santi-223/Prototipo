@@ -5,23 +5,46 @@ document.getElementById('openPopupBtn').addEventListener('click', function() {
 document.getElementById('insertBtn').addEventListener('click', function() {
     const dataTable = document.getElementById('dataTable');
     const rows = dataTable.getElementsByTagName('tr');
+    let seleccionado=false
 
     for (let i = 1; i < rows.length; i++) {
-        const checkbox = rows[i].querySelector('input[type="checkbox"]');
-        if (checkbox.checked) {
-            const cells = rows[i].getElementsByTagName('td');
-            const dataToInsert = [];
-            for (let j = 1; j < cells.length; j++) {
-                dataToInsert.push(cells[j].textContent);
+        const checkbox = document.querySelectorAll('input[name="opcion1"]');
+
+        checkbox.forEach(opcion => {
+            if (opcion.checked) {
+                seleccionado = true;
             }
+        });
 
-            // Aquí podrías realizar la inserción de datos en otra tabla o en cualquier otro lugar
-            console.log('Insertar:', dataToInsert);
-        }
+        if (seleccionado) {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Guardado exitosamente',
+                  confirmButtonColor: '#722F37'})
+        }else if(!seleccionado){
+            Swal.fire({
+                title: 'Sin elección',
+                text: "Necesitas agregar al menos un producto",
+                confirmButtonColor: '#722F37',
+                icon: 'warning'
+            })
     }
-
+        }
     document.getElementById('popup').style.display = 'none';
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 //barra de navegacion
 document.getElementById('searchInput').addEventListener('input', function() {
     const searchTerm = this.value.toLowerCase();
@@ -84,8 +107,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+//-------------------------------------19/09/2023
 
-
+const CancelarV=()=>{
+    Swal.fire({
+      title: 'Salir sin guardar',
+      text: "¿Quieres cancelar el registro?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#722F37',
+      cancelButtonColor: '#E12424',
+      confirmButtonText: 'Confirmar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        closePopup();
+      }
+    })
+  }
 
 
 
@@ -103,23 +141,53 @@ document.getElementById('openPopupBtnAAA').addEventListener('click', function() 
 document.getElementById('insertBtnAAA').addEventListener('click', function() {
     const dataTable = document.getElementById('dataTable');
     const rows = dataTable.getElementsByTagName('tr');
+    let seleccionado=false
 
     for (let i = 1; i < rows.length; i++) {
-        const checkbox = rows[i].querySelector('input[type="checkbox"]');
-        if (checkbox.checked) {
-            const cells = rows[i].getElementsByTagName('td');
-            const dataToInsert = [];
-            for (let j = 1; j < cells.length; j++) {
-                dataToInsert.push(cells[j].textContent);
+        const checkbox = document.querySelectorAll('input[name="opcion"]');
+
+        checkbox.forEach(opcion => {
+            if (opcion.checked) {
+                seleccionado = true;
             }
+        });
 
-            // Aquí podrías realizar la inserción de datos en otra tabla o en cualquier otro lugar
-            console.log('Insertar:', dataToInsert);
-        }
+        if (seleccionado) {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Guardado exitosamente',
+                  confirmButtonColor: '#722F37'})
+        }else if(!seleccionado){
+            Swal.fire({
+                title: 'Sin elección',
+                text: "Necesitas agregar un cliente",
+                confirmButtonColor: '#722F37',
+                icon: 'warning'
+            })
     }
-
-    document.getElementById('popupAAA').style.display = 'none';
+        }
+    document.getElementById('popup').style.display = 'none';
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //barra de navegacion
 document.getElementById('searchInput').addEventListener('input', function() {
     const searchTerm = this.value.toLowerCase();
@@ -219,6 +287,17 @@ const registrar = async()=>{
     let preciopedido = document.getElementById('preciopedido').value
     let fechapedido= document.getElementById('fechapedido').value;
     let descpedido = document.getElementById('descpedido').value
+
+
+
+
+
+
+
+
+
+
+    
     
     let caracteres = /^[a-zA-Z0-9_.-ñÑ' 'áéíóúÁÉÍÓÚ,]+$/;
     
@@ -252,4 +331,9 @@ Swal.fire({
     timer: 4000}).then(() => {window.location.href='pedidos.html'});}}
 
     
+
+
+
+//_________________________________________________________-
+
 

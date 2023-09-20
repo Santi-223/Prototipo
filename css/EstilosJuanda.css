@@ -86,3 +86,13 @@ input{
 .fas{
     cursor: pointer;
 }
+
+.cajaBotones button {
+    padding: 10px 40px;
+    /* Ajusta el padding para hacer los botones más largos */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    /* Ajusta el ancho de los botones */
+}

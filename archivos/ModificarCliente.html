@@ -3,12 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="css/Menu.css">
-  <link rel="stylesheet" href="css/dataTable.css" />
-  <link rel="stylesheet" href="css/EstilosJuanda.css">
-  <link rel="stylesheet" href="css/registrarProducto.css">
+  <link rel="stylesheet" href="css/gestionDeClientes.css">
   <!-- Incluye la biblioteca de Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Incluye la biblioteca de Bootstrap Icons -->
@@ -20,12 +19,9 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 </head>
 
-<body>
+<body onload="cargarDatos()">
   <div class="barraPrincipal">
     <div class="contenedor_1">
 
@@ -51,6 +47,7 @@
             <!-- Flecha hacia abajo --></p>
           <ul class="options">
             <li onclick="window.location.href='gestionroles.html'">Roles</li>
+
           </ul>
         </div>
         <div class="module">
@@ -58,6 +55,7 @@
           </p>
           <ul class="options">
             <li onclick="window.location.href='gestionUsuario.html'">Usuarios</li>
+            <li onclick="window.location.href='accso.html'">Acceso</li>
           </ul>
         </div>
         <div class="module">
@@ -101,106 +99,62 @@
       <div class="contenido2">
         <br>
         <center>
-          <div id="titulo">
-            <h3>Actualizar producto</h3>
-            <br>
-            <br>
-            <br>
+          <h3>Modificar Cliente</h3>
+        </center>
+        <br>
+        <div class="contForms">
+          <div class="input1">
+            <p class="parrafoGris"><i class="fa-solid fa-key iconosRojos"></i> ID del cliente</p>
+            <input id="id_cliente" class="input-field gris" type="text" placeholder="" readonly>
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-solid fa-font iconosRojos"></i> Nombre del cliente</p>
+            <input id="nombre_cliente" class="input-field" type="text" placeholder="Ingrese el nombre">
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-solid fa-phone iconosRojos"></i> Telefono del cliente</p>
+            <input id="telefono_cliente" class="input-field" type="text" placeholder="Ingrese el telefono">
+          </div>
+          <br>
+          <div class="input1">
+            <p><i class="fa-sharp fa-solid fa-location-dot iconosRojos"></i> Dirección del cliente</p>
+            <input id="direccion_cliente" class="input-field" type="text" placeholder="Ingrese la dirección">
+          </div>
+          <br>
+        </div>
+  
+        <center>
+          <div class="cajaBotones">
+            <button onclick="validarCamposModificar()" id="guardar" type="submit">Guardar</button>
+            <div class="espacioEntreBotones"></div>
+            <button id="cancelar" type="button" onclick="window.location.href='Clientes.html'">Cancelar</button>
           </div>
         </center>
-        <div id="contenedorsitos">
-          <div id="contenedorsito">
-            <div class="input-container">
-              <div id="eo">
-                <p id="textito"> <span class="icon key-icon iconosRojos"></span>ID</p>
-  
-                <input id="id_producto_actu" class="input-field" type="text" placeholder="001" disabled>
-              </div>
-  
-            </div>
-  
-            <div class="input-container">
-              <div id="eo">
-                <p id="textito"> <span class="fa-solid fa-font iconosRojos"></span> Nombre</p>
-  
-                <input id="nombre_producto_actu" class="input-field" type="text" placeholder="Ingrese el nombre">
-              </div>
-  
-            </div>
-            <div class="input-container">
-              <div id="eo">
-                <p id="textito"> <span class="fa-solid fa-message iconosRojos"></span> Descripción</p>
-  
-                <input id="descripcion_producto_actu" class="input-field" type="text" placeholder="Ingrese la descripción">
-              </div>
-  
-            </div>
-            <div class="input-container">
-              <div id="eo">
-                <p id="textito"> <span class="fa-sharp fa-solid fa-dollar-sign iconosRojos"></span> Precio</p>
-  
-                <input id="precio_producto_actu" class="input-field" type="text" placeholder="Ingrese el precio">
-              </div>
-  
-            </div>
-  
-            <br>
-  
-            <div class="input-container">
-              <div class="eo">
-                <p class=""><i class="fa-solid fa-utensils iconosRojos"></i> Categoria de productos</p>
-                <select id="categoria_producto" class="input-field">
-                  <option value="0">Seleccionar categoría</option>
-                  <option value="platos">Platos</option>
-                  <option value="ensaldas">Ensaldas</option>
-                  <option value="bebidas">Bebidas</option>
-                </select>
-              </div>
-            </div>
-  
-  
-  
-          </div>
-          ㅤ
-          <div id="cosas">
-            <center>
-              <br>
-              <br>
-              <div class="input1 divImagen">
-                <p><i class="fa-solid fa-image iconosRojos"></i> URL Imagen</p>
-                <img id="imagen_i" src="https://tse2.mm.bing.net/th?id=OIP.U8HnwxkbTkhoZ_DTf7sCSgHaHa&pid=Api&P=0&h=180"
-                  width="200px">
-                <br>
-                <br>
-                <input onchange="cargarImagen()" id="imagen_insumo" class="input-field2" type="text"
-                  placeholder="URL de la imagen">
-              </div>
-            </center>
-            <br>
-          </div>
-        </div>
-  
-        <div class="cajaBotones">
-          <br>
-          ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-          <button id="validarBtn" onclick="validacionacprod()" class="boton boton-generar"><i class=""></i> Guardar</button>ㅤㅤㅤㅤㅤ
-          <button id="cancelar" class="boton botonAgregar" onclick="window.location.href='gestionProductos.html'"><i class=""></i>
-            Cancelar</button>
-        </div>
+        <br>
       </div>
     </div>
-
-  </div>
   </div>
 
   <script>
-    $(document).ready(function () {
-      $('table.display').DataTable();
-    });
+    // Función para obtener el ID del cliente de la URL
+    function obtenerIDClienteDesdeURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('id_cliente');
+    }
+
+    // Obtener el ID del cliente de la URL
+    const idCliente = obtenerIDClienteDesdeURL();
+
+    function cargarDatos () {
+      consultarClientes(idCliente);
+    }
   </script>
+
+
+  <script src="js/gestionDeClientes.js"></script>
   <script src="js/Menu.js"></script>
-  <script src="js/validacionProductos.js"></script>
-  <script type="text/javascript" src="js/dataTable.js"></script>
 
 </html>
 

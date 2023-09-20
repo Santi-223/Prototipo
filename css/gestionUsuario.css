@@ -1,5 +1,6 @@
-#guardar{
+.botonAgregar{
+  background-color: #E12424;
   color: white;
-  width: 100px;
-  text-align:center;
+  height: 50px;
+  width: 180px;
 }
