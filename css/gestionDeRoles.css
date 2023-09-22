@@ -94,3 +94,33 @@ input{
     color: #6d6d6d;
 }
 
+
+.rojo{
+    background: #E12424;
+    color: white;
+
+  }
+  
+  .rojo:hover{
+    background: #f33928;
+  }
+  
+  .rojo:active{
+    box-shadow: 1px 1px 1px 1px #f33928;
+  }
+
+  .vinotinto{
+    background: #722F37;
+    color: white;
+  }
+  
+  .vinotinto:hover{
+    background: #a1434e;
+    
+  }
+  
+  .vinotinto:active{
+    box-shadow: 1px 1px 1px 1px #a1434e;
+  }
+
+

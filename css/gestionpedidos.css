@@ -66,15 +66,6 @@ input {
     /* Ajusta el ancho de los botones */
 }
 
-#guardar {
-    background-color: #E12424;
-    color: white;
-}
-
-#cancelar {
-    background-color: #722F37;
-    color: white;
-}
 
 
 .espacioEntreBotones {
@@ -85,3 +76,35 @@ input {
 .gris {
     color: #6d6d6d;
 }
+
+
+
+.rojo{
+    background: #E12424;
+    color: white;
+
+  }
+  
+  .rojo:hover{
+    background: #f33928;
+  }
+  
+  .rojo:active{
+    box-shadow: 1px 1px 1px 1px #f33928;
+  }
+
+  .vinotinto{
+    background: #48110d;
+    color: white;
+  }
+  
+  .vinotinto:hover{
+    background: #771d17;
+    
+  }
+  
+  .vinotinto:active{
+    box-shadow: 1px 1px 1px 1px #771d17;
+  }
+
+

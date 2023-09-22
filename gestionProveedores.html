@@ -99,8 +99,8 @@
                 </div>
             </center>
             <div class="botones">
-                <button class="boton botonAgregar" onclick="window.location.href='registrarProveedores.html'"><i class="fa-solid fa-plus"></i> Agregar</button>
-                <button class="boton boton-generar"><i class="fa-solid fa-file-pdf"></i> Generar reportes</button>
+                <button class="rojo" class="boton botonAgregar" onclick="window.location.href='registrarProveedores.html'"><i class="fa-solid fa-plus"></i> Agregar</button>
+                <button class="vinotinto" class="boton boton-generar"><i class="fa-solid fa-file-pdf"></i> Generar reportes</button>
             </div>
             <div class="tabla">
                 <table id="tablaInsumos" class="display" style="width:100%">
@@ -115,113 +115,96 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                       
+                      <tr>
                             <td>1</td>
-                            <td>Cachuchax</td>
-                            <td>Calle 13</td>
-                            <td>7651903</td>
-                            <td>
-                                <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>
-                                <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Donde el cucho</td>
-                            <td>Piso 21</td>
-                            <td>1092836</td>
-                            <td>
-                                <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>                               
-                                <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Serresiete</td>
-                            <td>CR-7</td>
-                            <td>7777777</td>
-                            <td>
-                                <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>                                
-                                <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
                             <td>LeidyLegumbres</td>
                             <td>Calle 90</td>
                             <td>7817263</td>
                             <td>
                                 <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>                                
-                                <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                                <i id="estado" class="fas fa-toggle-on toggle-icon " data-state="on"></i>
                             </td>
-                        </tr>
+                      </tr>
                        
-                        <tr>
-                            <td>5</td>
+                      <tr>
+                            <td>2</td>
                             <td>MariaVerde</td>
                             <td>Calle 45</td>
                             <td>91827456</td>
                              <td>
                                 <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>                                
-                                <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                                <i id="estado" class="fas fa-toggle-on toggle-icon " data-state="on"></i>
                             </td>
-                        </tr>
+                      </tr>
 
-                        <tr>
-                            <td>6</td>
+                      <tr>
+                            <td>3</td>
                             <td>ArleyKnives</td>
                             <td>Calle 11</td>
                             <td>78162345</td>
                             <td>
                                 <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>                                
-                                <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                                <i id="estado" class="fas fa-toggle-on toggle-icon " data-state="on"></i>
                             </td>
-                        </tr>
+                      </tr>
 
                         
-                         <tr>
-                           <td>7</td>
+                      <tr>
+                           <td>4</td>
                            <td>JuandaTech</td>
-                           <td>Calle 69</td>
+                           <td>Calle 6</td>
                            <td>1234567</td>
                            <td>
                             <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>                                
-                            <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                            <i id="estado" class="fas fa-toggle-on toggle-icon " data-state="on"></i>
                            </td>
-                       </tr>
+                      </tr>
 
-                       <tr>
-                        <td>8</td>
+                      <tr>
+                        <td>5</td>
                         <td>Julicerámicas</td>
-                        <td>Calle 19</td>
+                        <td>Calle 9</td>
                         <td>1278364</td>
                         <td>
                             <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>   
-                            <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                            <i id="estado" class="fas fa-toggle-on toggle-icon " data-state="on"></i>
                            
                         </td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>RatiStunner</td>
-                        <td>Calle 44</td>
-                        <td>8765439</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>BeautifulSales</td>
+                        <td>Calle 99</td>
+                        <td>8912845</td>
                         <td>
-                            <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>                               
-                            <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                            <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>   
+                            <i id="estado" class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                           
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td>10</td>
-                        <td>Ohiggins</td>
-                        <td>Calle 20</td>
-                        <td>7812937</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>Donde el bicho</td>
+                        <td>Calle 7</td>
+                        <td>7189237</td>
                         <td>
-                            <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>                      
-                            <i class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                            <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>   
+                            <i id="estado" class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                           
                         </td>
-                    </tr>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>Carnes&Carnes</td>
+                        <td>Calle 21</td>
+                        <td>4536782</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square iconosRojos" onclick="window.location.href='actualizarProveedores.html'"></i>   
+                            <i id="estado" class="fas fa-toggle-on toggle-icon " data-state="on"></i>
+                           
+                        </td>
+                      </tr>
 
                         <!-- Agregar más filas según sea necesario -->
                     </tbody>
@@ -250,6 +233,7 @@
     </script>
     <script src="js/Menu.js"></script>
     <script src="js/gestionJuanda.js"></script>
+    <script src="css/EstilosJuanda.css"></script>
     <script type="text/javascript" src="js/dataTable.js"></script>
 
 </html>

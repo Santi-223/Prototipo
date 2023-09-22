@@ -31,10 +31,12 @@
     /* Establece un contexto de bloque para el tbody */
     overflow-y: scroll;
     /* Habilita la barra de desplazamiento en el tbody */
+    background-color: rgb(255, 255, 255);
 }
 
 #tablita tbody td {
     width: 1%;
     padding: 10px;
-    border-top: 1px solid #f2f2f2;
+    border-top: 1px solid #ddd;
+
 }

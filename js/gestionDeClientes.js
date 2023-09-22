@@ -82,13 +82,14 @@ const listarClientes = async (busqueda) => {
                         `<td>${cliente.telefono_cliente}</td>` +
                         `<td>${cliente.direccion_cliente}</td>` +
                         `<td>
-                            <i onclick="window.location.href='ModificarCLiente.html?id_cliente=${cliente.id_cliente}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
+                            <i onclick="window.location.href='ModificarCliente.html?id_cliente=${cliente.id_cliente}'" class="fa-solid fa-pen-to-square iconosRojos"></i>
                             <i onclick="cambiarEstadoCliente('${cliente.id_cliente}', '${estado_nuevo}')" class="${estado}"></i>
                             <i onclick="cambiarEstadoClienteFrecuente('${cliente.id_cliente}', '${cliente_frec_nuevo}')" class="${frecuente}"></i>
                             <i onclick="eliminarCliente('${cliente.id_cliente}')" class="fas fa-trash iconosRojos"></i>
                         </td>`+
                         `</tr>`
                 })
+
             // Agrega los datos a la tabla y redibuja la tabla
             table.rows.add($(respuesta)).draw();
         })

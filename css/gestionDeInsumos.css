@@ -12,7 +12,7 @@ td i{
 }
 
 .iconosMorados {
-    color: #722F37;
+    color: #48110d;
 }
 
 input::placeholder {
@@ -156,7 +156,7 @@ input {
 }
 
 #guardar {
-    background-color: #722F37;
+    background-color: #48110d;
     color: white;
 }
 
@@ -213,3 +213,32 @@ input {
 #_id{
     background-color:#ccc;
 }
+
+
+.rojo{
+    background: #E12424;
+    color: white;
+  
+  }
+  
+  .rojo:hover{
+    background: #f33928;
+  }
+  
+  .rojo:active{
+    box-shadow: 1px 1px 1px 1px #f33928;
+  }
+  
+  .vinotinto{
+    background: #48110d;
+    color: white;
+  }
+  
+  .vinotinto:hover{
+    background: #771d17;
+    
+  }
+  
+  .vinotinto:active{
+    box-shadow: 1px 1px 1px 1px #771d17;
+  }
