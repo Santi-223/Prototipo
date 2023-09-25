@@ -209,7 +209,7 @@ const registrarInsumo = async () => {
         .then(json => {
             //alert(json.msg)//Mensaje que retorna la API
             console.log(json)
-            if (json.msg=="Inserción exitosa") {
+            if (json.msg!="Se presentaron problemas en la inserción") {
                 Swal.fire({
                     title: json.msg,
                     icon: 'success',
